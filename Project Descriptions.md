@@ -40,6 +40,6 @@ The purpose of completing these projects is to demonstrate my proficiency in the
 
   ####  Project #2: Visualizing COVID-19 Data in Power BI
   
-    1. [Completed Power BI Dashboard Link](https://app.powerbi.com/view?r=eyJrIjoiNzUzOGUxOWYtMTdjZi00ZWY2LWEzMWQtNWY0NzkyOTYxMTMxIiwidCI6IjRjY2NhM2I1LTcxY2QtNGU2ZC05NzRiLTRkOWJlYjk2YzZkNiIsImMiOjN9)
-    2. If the Power BI dashboard is not available please see this infographic, which outlines its features.
+    1. <a href="https://app.powerbi.com/view?r=eyJrIjoiNzUzOGUxOWYtMTdjZi00ZWY2LWEzMWQtNWY0NzkyOTYxMTMxIiwidCI6IjRjY2NhM2I1LTcxY2QtNGU2ZC05NzRiLTRkOWJlYjk2YzZkNiIsImMiOjN9" onclick="window.open('https://app.powerbi.com/view?r=eyJrIjoiNzUzOGUxOWYtMTdjZi00ZWY2LWEzMWQtNWY0NzkyOTYxMTMxIiwidCI6IjRjY2NhM2I1LTcxY2QtNGU2ZC05NzRiLTRkOWJlYjk2YzZkNiIsImMiOjN9', '_self');">Completed Power BI Dashboard Link</a>
+    2. If the Power BI dashboard is not available please see this [PNG infographic](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/f262aa7946a8b4269cdc6a06dba11e4cce322001/Power%20BI%20Dashboard%20Infographic.PNG), which outlines its features.
     3. 
