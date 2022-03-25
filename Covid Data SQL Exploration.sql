@@ -1,4 +1,4 @@
--- GREG SOLAMON PORTFOLIO PROJECT - COVID-19
+-- GREG SOLAMON PORTFOLIO PROJECT #1 - COVID-19 Data Exploration in SQL
 -- gsolamon@gmail.com
 -- Data Source: <https://ourworldindata.org/covid-deaths>
 
