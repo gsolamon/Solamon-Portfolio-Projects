@@ -21,7 +21,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
   7. Wrote 31 total queries in Microsoft SQL Server Management Studio to explore key statistics in Covid Data and created 12 views that will be used in Project #2.
   8. Query details below:
      - 2 queries to display all data in Covid Data and Country Data workbooks.
-     - 7 queries for country case count, case rate, death count, death rate, and case-fatality statistics, some over all dates and some aggregate (MAX) over time.
+     - 7 queries for country case count, case rate, death count, death rate, and case-fatality statistics using TOP N filters and aggregate functions (MAX and SUM).
      - 2 queries for continent case and death count.
      - 2 queries for global statistics.
      - 4 queries for country vaccination, testing, hospitalization, and ICU admissions over time.
