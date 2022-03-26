@@ -179,7 +179,7 @@ SELECT *, (rolling_people_vaccinated / population) * 100 AS rolling_vaccination_
 FROM #VaccinatedPopPercent;
 
 -- CREATING VIEWS TO BE USED IN VISUALIZATIONS PROJECT:
-USE [Covid Project]
+USE [Covid Project] -- These queries were written by Greg Solamon for his Portfolio Project #1.
 GO
 
 -- Cases by country.
