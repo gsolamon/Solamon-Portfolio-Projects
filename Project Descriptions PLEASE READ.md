@@ -7,6 +7,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
   - [**Project #1:** COVID-19 Data Exploration in SQL](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/4ce04f2fe36f4cd38c422f059bd7ce914641a344/Project%20%231%20Queries.sql)
   - [**Project #2:** COVID-19 Data Visualization in Microsoft Power BI](https://app.powerbi.com/view?r=eyJrIjoiNzUzOGUxOWYtMTdjZi00ZWY2LWEzMWQtNWY0NzkyOTYxMTMxIiwidCI6IjRjY2NhM2I1LTcxY2QtNGU2ZC05NzRiLTRkOWJlYjk2YzZkNiIsImMiOjN9)
   - **Project #3:** Cleaning Housing Data in SQL **(work in progress)**
+  - **Project #4:** Building Visuals in Python **(work in progress)**
 
 ### **Project Summaries:**
 
@@ -61,4 +62,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
      - Also created a Live Dashboard by pinning this report, but I cannot share it because my trial access of Power BI Web Service is almost expired.
   
   **Project #3: Cleaning Housing Data in SQL**
+  1. Work in progress.
+
+  **Project #4: Building Visuals in Python**
   1. Work in progress.
