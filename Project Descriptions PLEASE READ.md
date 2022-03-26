@@ -15,12 +15,12 @@ The purpose of completing these projects is to demonstrate my proficiency in the
   
   1. Installed MS Access, MS SQL Server 2019 Express, and MS SQL Server Management Studio (SSMS) on my personal desktop.
   2. Downloaded large COVID-19 dataset from Our World in Data (Source: [Our World in Data Covid Deaths](https://ourworldindata.org/covid-deaths)).
-  3. Used Microsoft Excel to split the CSV file into a Covid Data workbook (100,000+ rows) and a Country Data workbook (217 rows) to show SQL joins later in project.
+  3. Used Microsoft Excel to split the CSV file into a "Covid Data" workbook (100,000+ rows) and a "Country Data" workbook (217 rows) to show SQL joins later in project.
   5. Connected to local SQLEXPRESS server and named it "Covid Project."
-  6. Imported Covid Data and Country Data workbooks as tables into my Covid Project SQL Server.
-  7. Wrote 31 total queries in Microsoft SQL Server Management Studio to explore key statistics in Covid Data and created 12 views that will be used in Project #2.
+  6. Imported "Covid Data" and "Country Data" workbooks as tables into my "Covid Project" SQL Server database.
+  7. Wrote 31 total queries in Microsoft SQL Server Management Studio to explore key statistics in "Covid Data" and created 12 views that will be used in Project #2.
   8. Query details below:
-     - 2 queries to display all data in Covid Data and Country Data workbooks.
+     - 2 queries to display all data in "Covid Data" and "Country Data" workbooks.
      - 7 queries for country case count, case rate, death count, death rate, and case-fatality statistics using TOP N filters and aggregate functions (MAX and SUM).
      - 2 queries for continent case and death count.
      - 2 queries for global statistics.
@@ -42,7 +42,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
   **Project #2: Visualizing COVID-19 Data in Power BI**
   
   1. [Completed Power BI Dashboard Link](https://app.powerbi.com/view?r=eyJrIjoiNzUzOGUxOWYtMTdjZi00ZWY2LWEzMWQtNWY0NzkyOTYxMTMxIiwidCI6IjRjY2NhM2I1LTcxY2QtNGU2ZC05NzRiLTRkOWJlYjk2YzZkNiIsImMiOjN9)
-  2. If the Power BI dashboard is not available (for licensing reasons or whatever) please see this following PNG infographic, which outlines its features:
+  2. If the Power BI dashboard is not available (for licensing or other reasons) please see this following PNG infographic, which outlines its features:
   
   ![PNG infographic](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/f262aa7946a8b4269cdc6a06dba11e4cce322001/Power%20BI%20Dashboard%20Infographic.PNG)
   
