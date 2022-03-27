@@ -97,15 +97,15 @@ The purpose of completing these projects is to demonstrate my proficiency in the
      - 1 query creates a table view that can be used to export to Excel, Power BI, or other visualization software.
   9. SQL skills used:
      - Aggregate functions, COUNT, MIN, MAX, SUM, AVG, etc.
-     - Escape characters, string reformatting, LEN, RIGHT, LEFT, and CHAR(13)
-     - Datatypes, CAST, CONVERT, TRY_CONVERT, NVARCHAR, INT, and NUMERIC
-     - DELETE, ALTER, UPDATE, DROP, and IF EXISTS
-     - ORDER BY, OVER, PARTITION BY, OFFSET, and FETCH
+     - Escape characters, string reformatting, LEN, RIGHT, LEFT, CHAR(13)
+     - Datatypes, CAST, CONVERT, TRY_CONVERT, NVARCHAR, INT, NUMERIC
+     - DELETE, ALTER, UPDATE, DROP, IF EXISTS
+     - ORDER BY, OVER, PARTITION BY, OFFSET, FETCH
      - DECLARE, SET, temporary variables
      - Dynamic SQL, WHILE loop
-     - NULLIF, ISNULL, and IIF
+     - NULLIF, ISNULL, IIF
      - CTE, WITH, AS
-     - CREATE VIEW and GO
+     - CREATE VIEW, GO
 
   **Project #4: Building Visuals in Python**
   
