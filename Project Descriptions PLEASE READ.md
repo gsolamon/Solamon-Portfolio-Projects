@@ -6,7 +6,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
 
   - [**Project #1:** COVID-19 Data Exploration in SQL](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/4ce04f2fe36f4cd38c422f059bd7ce914641a344/Project%20%231%20Queries.sql)
   - [**Project #2:** COVID-19 Data Visualization in Microsoft Power BI](https://app.powerbi.com/view?r=eyJrIjoiNzUzOGUxOWYtMTdjZi00ZWY2LWEzMWQtNWY0NzkyOTYxMTMxIiwidCI6IjRjY2NhM2I1LTcxY2QtNGU2ZC05NzRiLTRkOWJlYjk2YzZkNiIsImMiOjN9)
-  - **Project #3:** Cleaning Housing Data in SQL **(work in progress)**
+  - [**Project #3:** Cleaning Housing Data in SQL](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/d77e687f087d7e365c3723597acb71785a1435fb/Project%20%233:%20Cleaning%20Housing%20Data%20in%20SQL%20(ETL)/Parcel%20Queries.sql)
   - **Project #4:** Building Visuals in Python **(work in progress)**
 
 ### **Project Summaries:**
@@ -28,7 +28,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
      - 1 using CTE to obtain rolling vaccination percentage over time.
      - 1 using temporary table to obtain rolling vaccination percentage over time.
      - 12 views created to be used in Project #2.
-  9. SQL Skills used:
+  9. SQL skills used:
      - SELECT statements, WHERE, TOP N, LIKE
      - ORDER BY, GROUP BY, PARTITION OVER
      - Aggregate functions, SUM, MAX, MIN
@@ -61,8 +61,52 @@ The purpose of completing these projects is to demonstrate my proficiency in the
      - Published report to Microsoft Power BI Web Service and made it public (via first link in this section).
      - Also created a Live Dashboard by pinning this report, but I cannot share it because my trial access of Power BI Web Service is almost expired.
   
-  **Project #3: Cleaning Housing Data in SQL**
-  1. Work in progress.
+  **Project #3: Cleaning Housing Data in SQL (ETL)**
+  
+  1. Found public housing dataset for Henderson County, NC, on their website (Source: [Henderson County Government Website](https://hendersoncountync.sharefile.com/share/view/s8ceee93ece54dbb9/fod01be9-6fee-41e3-9de5-c8ce062aa493)).
+  2. Downloaded and extracted large CSV file called "parcels" on the website (69,000+ rows with many data quality issues).
+  3. Summary of data quality issues:
+     - 1. Too many irrelevant or empty columns.
+     - 2. Duplicate rows for a single land sale.
+     - 3. Many rows were delimited incorrectly, which shifted other data into the wrong field.
+     - 4. All data types are strings, even the dates and numeric values.
+     - 5. All entries have redundant single quotes (') around each string.
+     - 6. Empty cells use double quotes ('') instead of NULL.
+     - 7. Mailing addresses are only split into components, no concatenations available.
+     - 8. Date columns use DATETIME format even when it is better to use DATE.
+     - 9. Some addresses use '0   NO ADDRESS ASSIGNED ' instead of NULL.
+     - 10. Addresses with no building number use '0   ' as the number.
+     - 11. Some addresses are completely missing.
+  4. Connected to new "Housing Project" database using Microsoft SQL Server Management Studio and imported "Parcels" spreadsheet as a database object.
+  5. Wrote queries in SQL to extract, transform, and load (ETL) this originally messy dataset to turn it into a clean, organized table view (which can be viewed at [this file location](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/d77e687f087d7e365c3723597acb71785a1435fb/Project%20%233:%20Cleaning%20Housing%20Data%20in%20SQL%20(ETL)/Final%20Henderson%20Land%20Parcels.xlsx)).
+  6. Extraction steps:
+     - 1 query to view entire Parcels table with ordering.
+     - 1 multi-part query to validate and aggregate key statistics.
+     - 1 query to reformat and concatenate address data so that a mailing list can be made.
+  7. Transformation steps:
+     - 1 query deletes rows that were incorrectly delimited.
+     - 1 query drops empty columns from table.
+     - 1 query trims unnecessary single quotes (') from strings entries then converts from STRING to DATE type.
+     - 4 queries convert all columns with datetime STRINGs into DATE type.
+     - 3 test queries to check aspects of Dynamic SQL that will be used.
+     - 1 complex query uses Dynamic SQL that iterates through all columns (began with 90 total) and replaces all double quotes ('') with NULL.
+     - 4 queries that clean address formats, replace '0   NO ADDRESS ASSIGNED ' with NULL, and append 4-digit ZIP code extension to mailing ZIP code if it is given.
+     - 1 query uses CTE to remove duplicate rows where only one land sale occured.
+     - 1 query drops all irrelevant rows.
+  8. Load step:
+     - 1 query creates a table view that can be used to export to Excel, Power BI, or other visualization software.
+  9. SQL skills used:
+     - Aggregate functions, COUNT, MIN, MAX, SUM, AVG, etc.
+     - Escape characters, string reformatting, LEN, RIGHT, LEFT, and CHAR(13)
+     - Datatypes, CAST, CONVERT, TRY_CONVERT, NVARCHAR, INT, and NUMERIC
+     - DELETE, ALTER, UPDATE, DROP, and IF EXISTS
+     - ORDER BY, OVER, PARTITION BY, OFFSET, and FETCH
+     - DECLARE, SET, temporary variables
+     - Dynamic SQL, WHILE loop
+     - NULLIF, ISNULL, and IIF
+     - CTE, WITH, AS
+     - CREATE VIEW and GO
 
   **Project #4: Building Visuals in Python**
+  
   1. Work in progress.
