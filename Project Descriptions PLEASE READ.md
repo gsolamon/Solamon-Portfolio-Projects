@@ -66,17 +66,17 @@ The purpose of completing these projects is to demonstrate my proficiency in the
   1. Found public housing dataset for Henderson County, NC, on their website (Source: [Henderson County Government Website](https://hendersoncountync.sharefile.com/share/view/s8ceee93ece54dbb9/fod01be9-6fee-41e3-9de5-c8ce062aa493)).
   2. Downloaded and extracted large CSV file called "parcels" on the website (69,000+ rows with many data quality issues).
   3. Summary of data quality issues:
-     - 1. Too many irrelevant or empty columns.
-     - 2. Duplicate rows for a single land sale.
-     - 3. Many rows were delimited incorrectly, which shifted other data into the wrong field.
-     - 4. All data types are strings, even the dates and numeric values.
-     - 5. All entries have redundant single quotes (') around each string.
-     - 6. Empty cells use double quotes ('') instead of NULL.
-     - 7. Mailing addresses are only split into components, no concatenations available.
-     - 8. Date columns use DATETIME format even when it is better to use DATE.
-     - 9. Some addresses use '0   NO ADDRESS ASSIGNED ' instead of NULL.
-     - 10. Addresses with no building number use '0   ' as the number.
-     - 11. Some addresses are completely missing.
+     - Too many irrelevant or empty columns.
+     - Duplicate rows for a single land sale.
+     - Many rows were delimited incorrectly, which shifted other data into the wrong field.
+     - All data types are strings, even the dates and numeric values.
+     - All entries have redundant single quotes (') around each string.
+     - Empty cells use double quotes ('') instead of NULL.
+     - Mailing addresses are only split into components, no concatenations available.
+     - Date columns use DATETIME format even when it is better to use DATE.
+     - Some addresses use '0   NO ADDRESS ASSIGNED ' instead of NULL.
+     - Addresses with no building number use '0   ' as the number.
+     - Some addresses are completely missing.
   4. Connected to new "Housing Project" database using Microsoft SQL Server Management Studio and imported "Parcels" spreadsheet as a database object.
   5. Wrote queries in SQL to extract, transform, and load (ETL) this originally messy dataset to turn it into a clean, organized table view (which can be viewed at [this file location](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/d77e687f087d7e365c3723597acb71785a1435fb/Project%20%233:%20Cleaning%20Housing%20Data%20in%20SQL%20(ETL)/Final%20Henderson%20Land%20Parcels.xlsx)).
   6. Extraction steps:
