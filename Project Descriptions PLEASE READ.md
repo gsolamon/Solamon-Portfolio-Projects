@@ -110,7 +110,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
   **Project #4: Visualizing Spotify Data in Python**
   
   **Please note that some results (namely textual outputs) do not always display properly in the GitHub Notebook View. If you want to see all Python outputs, you may need to download the Python Notebook file and run the code in your own Python IDE. All tables, graphs, and images seem to display correctly.**
-  1. Found public Spotify track library database (250,000+ rows; about 10,000 tracks per genre) on Kaggle (Source: [Kaggle Spotify Database](https://www.kaggle.com/datasets/zaheenhamidani/ultimate-spotify-tracks-db).
+  1. Found public Spotify track library database (250,000+ rows; about 10,000 tracks per genre) on Kaggle (Source: [Kaggle Spotify Database](https://www.kaggle.com/datasets/zaheenhamidani/ultimate-spotify-tracks-db)).
   2. Imported Python libraries: pandas, numpy, seaborn, and matplotlib.
   3. Read CSV file "SpotifyFeatures.csv" into the DataFrame (df) from my downloads folder.
   4. Used "df.head()" to read a sample of the data columns.
@@ -128,17 +128,17 @@ The purpose of completing these projects is to demonstrate my proficiency in the
 
   ![PNG Scatterplots](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c5351340ce5b4033432b8898c1c0816e82c4987f/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Visuals%20Folder/PopularityScatterplotsSummary.PNG)
   
-      - A. shows negative correlation with regression line between acousticness and popularity
-      - B. shows popularity vs. acousticness (0 being mixed, 1 being acoustic)
-      - C. shows popularity vs. danceability
-      - D. shows popularity vs. duration in milliseconds
-      - E. shows popularity vs. energy 
-      - F. shows popularity vs. liveness (0 being recorded, 1 being live performance)
-      - G. shows popularity vs. loudness (in dB)
-      - H. shows popularity vs. instrumentalness (0 being lyrical, 1 being instruments-only)
-      - I. shows popularity vs. speechiness (0 being no words being used, 1 being very many words used)
-      - J. shows popularity vs. tempo (in beats per minute)
-      - K. shows popularity vs. valence (0 being very sad/depressing, 1 being very happy/uplifting)
+      A. shows negative correlation with regression line between acousticness and popularity
+      B. shows popularity vs. acousticness (0 being mixed, 1 being acoustic)
+      C. shows popularity vs. danceability
+      D. shows popularity vs. duration in milliseconds
+      E. shows popularity vs. energy 
+      F. shows popularity vs. liveness (0 being recorded, 1 being live performance)
+      G. shows popularity vs. loudness (in dB)
+      H. shows popularity vs. instrumentalness (0 being lyrical, 1 being instruments-only)
+      I. shows popularity vs. speechiness (0 being no words being used, 1 being very many words used)
+      J. shows popularity vs. tempo (in beats per minute)
+      K. shows popularity vs. valence (0 being very sad/depressing, 1 being very happy/uplifting)
   15. Created correlation matrix and heat map (shown below #16) to show which numerical variables were most or least correlated.
   16. Created 3 scatterplots using seaborn clustered by genre to see how genre affected relationships between speechiness, valence, instrumentalness, and popularity:
   
