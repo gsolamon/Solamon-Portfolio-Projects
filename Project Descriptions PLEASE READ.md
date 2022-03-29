@@ -109,7 +109,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
 
   **Project #4: Visualizing Spotify Data in Python**
   
-  **Please note that some results (namely textual outputs) do not always display properly in the GitHub Notebook View. If you want to see all Python outputs, you may need to download the Python Notebook file and run the code in your own Python IDE. All tables, graphs, and images seem to display correctly.**
+  **[Here](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/77c68a0648f8fa792d922a3a267448bb718ab321/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Portfolio%20Project%20%234.ipynb) is a link to the completed Python Notebook. Please note that some results (namely textual outputs) do not always display properly in the GitHub Notebook View. If you want to see all Python outputs, you may need to download the Python Notebook file and run the code in your own Python IDE. All tables, graphs, and images seem to display correctly.**
   1. Found public Spotify track library database (250,000+ rows; about 10,000 tracks per genre) on Kaggle (Source: [Kaggle Spotify Database](https://www.kaggle.com/datasets/zaheenhamidani/ultimate-spotify-tracks-db)).
   2. Imported Python libraries: pandas, numpy, seaborn, and matplotlib.
   3. Read CSV file "SpotifyFeatures.csv" into the DataFrame (df) from my downloads folder.
