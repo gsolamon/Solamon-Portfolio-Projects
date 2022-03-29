@@ -144,10 +144,10 @@ The purpose of completing these projects is to demonstrate my proficiency in the
   
   ![PNG Clustered Plots](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c5351340ce5b4033432b8898c1c0816e82c4987f/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Visuals%20Folder/HeatmapClusteredScatterplots.PNG)
   
-      - L. shows heat map of correlations between numerical variables (black being strong negative correlation, white being strong positive correlation, and red/purple being weak or no correlation
-      - M. shows clustered scatterplot of popularity vs. speechiness with strong clustering of "comedy" genre with high speechiness and moderate popularity
-      - N. shows scatterplot of popularity vs. instrumentalness with no noticeable clusters
-      - O. shows scatterplot of popularity vs. valence with no noticeable clusters.
+      L. shows heat map of correlations between numerical variables (black being strong negative correlation, white being strong positive correlation, and red/purple being weak or no correlation
+      M. shows clustered scatterplot of popularity vs. speechiness with strong clustering of "comedy" genre with high speechiness and moderate popularity
+      N. shows scatterplot of popularity vs. instrumentalness with no noticeable clusters
+      O. shows scatterplot of popularity vs. valence with no noticeable clusters.
   17. Used "for" loop and "df_numerical[col_name].cat.codes" to quantify categorical data fields ('genre', 'key', 'mode', and 'time_signature').
   18. Used these quantified categories to create an extended correlation matrix that now measured the effect of categorical variables on numerical variables.
   19. Returned sorted list of strongly negative correlation pairs that were between -1 < r <= -0.4.
@@ -155,14 +155,24 @@ The purpose of completing these projects is to demonstrate my proficiency in the
   21. Made conclusions on which variables were most correlated:
       - Higher valence (happier) songs had more energy (r = +0.436771).
       - Louder songs were more danceable (r = +0.438668).
-      - 3. Live-sounding tracks were speechier (r = +0.510147).
-      - 4. Higher valence (happier) songs were more danceable (r = +0.547154).
-      - 5. Louder songs had higher energy (r = +0.816088).
-      - 6. Acoustic songs had lower energy (r = -0.725576).
-      - 7. Acoustic songs were less loud (r = -0.690202).
-      - 8. Instrumental songs were less loud (r = -0.506320).
-      - 9. Speechiness showed strong clustering by genre.
-      - 10. Instrumentalness did not show clustering by genre.
+      - Live-sounding tracks were speechier (r = +0.510147).
+      - Higher valence (happier) songs were more danceable (r = +0.547154).
+      - Louder songs had higher energy (r = +0.816088).
+      - Acoustic songs had lower energy (r = -0.725576).
+      - Acoustic songs were less loud (r = -0.690202).
+      - Instrumental songs were less loud (r = -0.506320).
+      - Speechiness showed strong clustering by genre.
+      - Instrumentalness did not show clustering by genre.
   22. This type of study would be very useful when examining marketing or sales data to see which product categories are most popular and which variables have the greatest correlations between each other.
+  23. Python skills used:
+      - importing, aliases, reading csv, changing display settings, head()
+      - loc[], unique()
+      - print(), min(), max(), mean()
+      - sort_values(by = ?)
+      - drop_duplicates(subset = ?, keep = ?)
+      - plt.scatter(), sns.regplot(), sns.heatmap(), sns.scatterplot(x = ?, y = ?, data = df, hue = 'genre', legend = 'full')
+      - corr(method = 'pearson'), 'spearman', 'kendall'
+      - for loop, if(), astype(), cat.codes
+      - unstack(), between()
 
 Thank you for reading. -Greg Solamon
