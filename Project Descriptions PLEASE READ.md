@@ -109,50 +109,50 @@ The purpose of completing these projects is to demonstrate my proficiency in the
 
   **Project #4: Visualizing Spotify Data in Python**
   
-  **[Here](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/77c68a0648f8fa792d922a3a267448bb718ab321/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Portfolio%20Project%20%234.ipynb) is a link to the completed Python Notebook. Please note that some results (namely textual outputs) do not always display properly in the GitHub Notebook View. If you want to see all Python outputs, you may need to download the Python Notebook file and run the code in your own Python IDE. All tables, graphs, and images seem to display correctly.**
   1. Found public Spotify track library database (250,000+ rows; about 10,000 tracks per genre) on Kaggle (Source: [Kaggle Spotify Database](https://www.kaggle.com/datasets/zaheenhamidani/ultimate-spotify-tracks-db)).
-  2. Imported Python libraries: pandas, numpy, seaborn, and matplotlib.
-  3. Read CSV file "SpotifyFeatures.csv" into the DataFrame (df) from my downloads folder.
-  4. Used "df.head()" to read a sample of the data columns.
-  5. Checked for missing data using "np.mean(df[col].isnull())" then displayed results.
-  6. Checked data types of the columns using "df.dtypes"; some are objects, some are integers, and some are float64.
-  7. Checked how many unique genres Spotify uses (there are 26 but two of them are "Children's Music" and 'Children’s Music').
-  8. Used "df.loc[(df.genre == "Children's Music"), 'genre'] = 'Children’s Music'" to rewrite entries with "Children's Music" as 'Children’s Music'.
-  9. Checked that 'popularity' is scored as an integer from 0 to 100.
-  10. Calculated min, max, and average values of numerical columns to get an idea of their general characteristics.
-  11. Sorted by popularity to see which songs were most popular on Spotify in this subset.
-  12. Dropped any duplicate rows; created "df2" using "df2 = df.drop_duplicates(subset = ['track_name', 'artist_name'], keep = 'first')
+  2. Opened new Python Notebook in Jupyter. Completed Python Notebook can be found on [my GitHub at this location](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/77c68a0648f8fa792d922a3a267448bb718ab321/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Portfolio%20Project%20%234.ipynb). **Please note that some results (namely textual outputs) do not always display properly in the GitHub Notebook View. If you want to see all Python outputs, you may need to download the Python Notebook file and run the code in your own Python IDE. All tables, graphs, and images seem to display correctly.**
+  3. Imported Python libraries: pandas, numpy, seaborn, and matplotlib.
+  4. Read CSV file "SpotifyFeatures.csv" into the DataFrame (df) from my downloads folder.
+  5. Used "df.head()" to read a sample of the data columns.
+  6. Checked for missing data using "np.mean(df[col].isnull())" then displayed results.
+  7. Checked data types of the columns using "df.dtypes"; some are objects, some are integers, and some are float64.
+  8. Checked how many unique genres Spotify uses (there are 26 but two of them are "Children's Music" and 'Children’s Music').
+  9. Used "df.loc[(df.genre == "Children's Music"), 'genre'] = 'Children’s Music'" to rewrite entries with "Children's Music" as 'Children’s Music'.
+  10. Checked that 'popularity' is scored as an integer from 0 to 100.
+  11. Calculated min, max, and average values of numerical columns to get an idea of their general characteristics.
+  12. Sorted by popularity to see which songs were most popular on Spotify in this subset.
+  13. Dropped any duplicate rows; created "df2" using "df2 = df.drop_duplicates(subset = ['track_name', 'artist_name'], keep = 'first')
 ," which drops any duplicate occurences with the same title and artist (but different genres).
-  13. Made 10 correlation hypotheses (the definitions of each Spotify track feature can be found at [Spotify's Developer Website](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features)).
-  14. Created 10 scatterplots using matplotlib and 1 regression plot using seaborn to show relationship between the numerical variables and track popularity:
+  14. Made 10 correlation hypotheses (the definitions of each Spotify track feature can be found at [Spotify's Developer Website](https://developer.spotify.com/documentation/web-api/reference/#/operations/get-audio-features)).
+  15. Created 10 scatterplots using matplotlib and 1 regression plot using seaborn to show relationship between the numerical variables and track popularity:
 
   ![PNG Scatterplots](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c5351340ce5b4033432b8898c1c0816e82c4987f/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Visuals%20Folder/PopularityScatterplotsSummary.PNG)
   
-      A. shows negative correlation with regression line between acousticness and popularity
-      B. shows popularity vs. acousticness (0 being mixed, 1 being acoustic)
-      C. shows popularity vs. danceability
-      D. shows popularity vs. duration in milliseconds
-      E. shows popularity vs. energy 
-      F. shows popularity vs. liveness (0 being recorded, 1 being live performance)
-      G. shows popularity vs. loudness (in dB)
-      H. shows popularity vs. instrumentalness (0 being lyrical, 1 being instruments-only)
-      I. shows popularity vs. speechiness (0 being no words being used, 1 being very many words used)
-      J. shows popularity vs. tempo (in beats per minute)
-      K. shows popularity vs. valence (0 being very sad/depressing, 1 being very happy/uplifting)
-  15. Created correlation matrix and heat map (shown below #16) to show which numerical variables were most or least correlated.
-  16. Created 3 scatterplots using seaborn clustered by genre to see how genre affected relationships between speechiness, valence, instrumentalness, and popularity:
+     A. shows negative correlation with regression line between acousticness and popularity
+     B. shows popularity vs. acousticness (0 being mixed, 1 being acoustic)
+     C. shows popularity vs. danceability
+     D. shows popularity vs. duration in milliseconds
+     E. shows popularity vs. energy 
+     F. shows popularity vs. liveness (0 being recorded, 1 being live performance)
+     G. shows popularity vs. loudness (in dB)
+     H. shows popularity vs. instrumentalness (0 being lyrical, 1 being instruments-only)
+     I. shows popularity vs. speechiness (0 being no words being used, 1 being very many words used)
+     J. shows popularity vs. tempo (in beats per minute)
+     K. shows popularity vs. valence (0 being very sad/depressing, 1 being very happy/uplifting)
+  16. Created correlation matrix and heat map (shown below #16) to show which numerical variables were most or least correlated.
+  17. Created 3 scatterplots using seaborn clustered by genre to see how genre affected relationships between speechiness, valence, instrumentalness, and popularity:
   
   ![PNG Clustered Plots](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c5351340ce5b4033432b8898c1c0816e82c4987f/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Visuals%20Folder/HeatmapClusteredScatterplots.PNG)
   
-      L. shows heat map of correlations between numerical variables (black being strong negative correlation, white being strong positive correlation, and red/purple being weak or no correlation
-      M. shows clustered scatterplot of popularity vs. speechiness with strong clustering of "comedy" genre with high speechiness and moderate popularity
-      N. shows scatterplot of popularity vs. instrumentalness with no noticeable clusters
-      O. shows scatterplot of popularity vs. valence with no noticeable clusters.
-  17. Used "for" loop and "df_numerical[col_name].cat.codes" to quantify categorical data fields ('genre', 'key', 'mode', and 'time_signature').
-  18. Used these quantified categories to create an extended correlation matrix that now measured the effect of categorical variables on numerical variables.
-  19. Returned sorted list of strongly negative correlation pairs that were between -1 < r <= -0.4.
-  20. Returned sorted list of strongly positive correlation pairs that were between 0.4 <= r < 1.
-  21. Made conclusions on which variables were most correlated:
+     L. shows heat map of correlations between numerical variables (black being strong negative correlation, white being strong positive correlation, and red/purple being weak or no correlation
+     M. shows clustered scatterplot of popularity vs. speechiness with strong clustering of "comedy" genre with high speechiness and moderate popularity
+     N. shows scatterplot of popularity vs. instrumentalness with no noticeable clusters
+     O. shows scatterplot of popularity vs. valence with no noticeable clusters.
+  18. Used "for" loop and "df_numerical[col_name].cat.codes" to quantify categorical data fields ('genre', 'key', 'mode', and 'time_signature').
+  19. Used these quantified categories to create an extended correlation matrix that now measured the effect of categorical variables on numerical variables.
+  20. Returned sorted list of strongly negative correlation pairs that were between -1 < r <= -0.4.
+  21. Returned sorted list of strongly positive correlation pairs that were between 0.4 <= r < 1.
+  22. Made conclusions on which variables were most correlated:
       - Higher valence (happier) songs had more energy (r = +0.436771).
       - Louder songs were more danceable (r = +0.438668).
       - Live-sounding tracks were speechier (r = +0.510147).
@@ -163,8 +163,8 @@ The purpose of completing these projects is to demonstrate my proficiency in the
       - Instrumental songs were less loud (r = -0.506320).
       - Speechiness showed strong clustering by genre.
       - Instrumentalness did not show clustering by genre.
-  22. This type of study would be very useful when examining marketing or sales data to see which product categories are most popular and which variables have the greatest correlations between each other.
-  23. Python skills used:
+  23. This type of study would be very useful when examining marketing or sales data to see which product categories are most popular and which variables have the greatest correlations between each other.
+  24. Python skills used:
       - importing, aliases, reading csv, changing display settings, head()
       - loc[], unique()
       - print(), min(), max(), mean()
