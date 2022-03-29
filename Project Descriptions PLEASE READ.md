@@ -140,7 +140,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
      J. shows popularity vs. tempo (in beats per minute)
      K. shows popularity vs. valence (0 being very sad/depressing, 1 being very happy/uplifting)
   16. Created correlation matrix and heat map (shown below #16) to show which numerical variables were most or least correlated.
-  17. Created 3 scatterplots using seaborn clustered by genre to see how genre affected relationships between speechiness, valence, instrumentalness, and popularity:
+  17. Created 3 scatterplots using seaborn that were clustered by genre to see how genre affected relationships between speechiness, valence, instrumentalness, and popularity:
   
   ![PNG Clustered Plots](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c5351340ce5b4033432b8898c1c0816e82c4987f/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Visuals%20Folder/HeatmapClusteredScatterplots.PNG)
   
@@ -148,7 +148,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
      M. shows clustered scatterplot of popularity vs. speechiness with strong clustering of "comedy" genre with high speechiness and moderate popularity
      N. shows scatterplot of popularity vs. instrumentalness with no noticeable clusters
      O. shows scatterplot of popularity vs. valence with no noticeable clusters.
-  18. Used "for" loop and "df_numerical[col_name].cat.codes" to quantify categorical data fields ('genre', 'key', 'mode', and 'time_signature').
+  18. Used for loop, if statement, and "df_numerical[col_name].cat.codes" to quantify categorical data fields ('genre', 'key', 'mode', and 'time_signature').
   19. Used these quantified categories to create an extended correlation matrix that now measured the effect of categorical variables on numerical variables.
   20. Returned sorted list of strongly negative correlation pairs that were between -1 < r <= -0.4.
   21. Returned sorted list of strongly positive correlation pairs that were between 0.4 <= r < 1.
@@ -175,4 +175,4 @@ The purpose of completing these projects is to demonstrate my proficiency in the
       - for loop, if(), astype(), cat.codes
       - unstack(), between()
 
-Thank you for reading. -Greg Solamon
+**Thank you for reading. -Greg Solamon**
