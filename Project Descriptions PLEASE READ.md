@@ -106,6 +106,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
      - NULLIF, ISNULL, IIF
      - CTE, WITH, AS
      - CREATE VIEW, GO
+  10. I have added an explanatory PowerPoint to accompany this project (originally presented to Emory University interview panel on April 19, 2022) within the Portfolio Project #3 folder.
 
   **Project #4: Visualizing Spotify Data in Python**
   
