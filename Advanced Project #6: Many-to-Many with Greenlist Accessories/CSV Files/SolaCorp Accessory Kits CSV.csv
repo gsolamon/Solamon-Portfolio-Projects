@@ -1,0 +1,21 @@
+﻿Appliance Item Number,Item Description,Accessory Item Number,Accessory Item Description,Quantity per Parent,Multiplier
+I134330,Chapati maker #1,I134330-1,Chapati maker Accessory #1,2,3
+I134330,Chapati maker #1,I134330-2,Chapati maker Accessory #2,2,3
+I134330,Chapati maker #1,BASIC_KIT,Basic Accessories Kit,1,3
+I201258,Fire pot #1,I201258-1,Fire pot Accessory #1,1,4
+I201258,Fire pot #1,I201258-2,Fire pot Accessory #2,1,4
+I201258,Fire pot #1,I201258-3,Fire pot Accessory #3,1,4
+I201258,Fire pot #1,BASIC_KIT,Basic Accessories Kit,1,4
+I246000,Russian oven #1,I246000-1,Russian oven Accessory #1,1,6
+I246000,Russian oven #1,I246000-2,Russian oven Accessory #2,1,6
+I246000,Russian oven #1,I246000-3,Russian oven Accessory #3,1,6
+I246000,Russian oven #1,I246000-4,Russian oven Accessory #4,4,6
+I246000,Russian oven #1,I246000-5,Russian oven Accessory #5,4,6
+I246000,Russian oven #1,BASIC_KIT,Basic Accessories Kit,1,6
+I293000,Butane torch #2,I293000-1,Butane torch Accessory #1,1,5
+I293000,Butane torch #2,I293000-2,Butane torch Accessory #2,4,5
+I293000,Butane torch #2,I293000-3,Butane torch Accessory #3,6,5
+I293000,Butane torch #2,I293000-4,Butane torch Accessory #4,10,5
+I293000,Butane torch #2,BASIC_KIT,Basic Accessories Kit,1,5
+I539617,Vacuum fryer #2,I539617-1,Vacuum fryer Accessory #1,5,2
+I539617,Vacuum fryer #2,BASIC_KIT,Basic Accessories Kit,1,2
