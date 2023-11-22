@@ -58,9 +58,20 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   15. I also implemented security roles by geographic region so that salespeople can only see orders in their own territory:
   ![Security Roles](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/Security%20Roles.png)
 
-  **Advanced Project #6: Greenlist Accessories Report**
+  **Advanced Project #6: Many-to-Many with Greenlist Accessories**
   
-  1. WORK IN PROGRESS
+  1. This report takes the weekly Greenlist (orders that have been approved to ship this week according to the Projected Ship Dates report) and lets the warehouse/Shipping Department know if there are accessory items needed with the shippable appliance. This report is essential at Micromeritics because it prevents the unawareness of required accessory items from holding up large revenue from instruments.
+  2. The data model behind this report is unique in that it handles a "many-to-many" relationship between appliances and accessory items. That is, many appliances can have the same accessory and one appliance may have many accessories that go with it. Microsoft warns against using many-to-many relationships without understanding the "significantly different behavior:"
+  PICTURE
+
+  3. For this portfolio project, I tried to limit the size of the dataset while preserving the many-to-many relationship, which is in the LIVE version of this report. Below are SolaCorp's list of accessory kits and their corresponding appliance number(s):
+  PICTURE
+
+  4. Note that there are 5 appliances with accessories. Each appliance has between 2 and 6 accessory items. All 5 appliances have the BASIC_KIT accessory. This table defines the many-to-many relationship between appliance and accessory item. The entire data model is given below:
+  PICTURE
+
+  5. The Greenlist table is constructed using the same semantic model as the Projected Ship Dates report, filtering only to orders that are projected to ship within the next week. This Greenlist is joined (merged) to the table of open sales order lines and all null rows are filtered out. This leaves only the sales order lines that are expected to ship this week. The Power Query M code for the Open Sales Orders table can be found at this [GitHub location](link incoming).
+  6. Available inventory for each item is calculated by loading the Bin Contents table where each row is 
 
   **Advanced Project #7: Consolidated Operating Model**
   
