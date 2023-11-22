@@ -5,7 +5,7 @@ In these three advanced projects, I will demonstrate my ability to build semanti
 ### **Project List:**
 
   - [**Project #5:** Projected Ship Dates in the Power Platform](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/a4df116b6ae961cccb0e23dae92cdcf23fd586f1/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI)
-  - [**Project #6:** Greenlist Accessories Report](link incoming)
+  - [**Project #6:** Greenlist Accessories Report]([link incoming](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/main/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories))
   - [**Project #7:** Consolidated Operating Model](link incoming)
 
 
