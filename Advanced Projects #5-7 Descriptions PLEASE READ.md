@@ -71,7 +71,32 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   PICTURE
 
   5. The Greenlist table is constructed using the same semantic model as the Projected Ship Dates report, filtering only to orders that are projected to ship within the next week. This Greenlist is joined (merged) to the table of open sales order lines and all null rows are filtered out. This leaves only the sales order lines that are expected to ship this week. The Power Query M code for the Open Sales Orders table can be found at this [GitHub location](link incoming).
-  6. Available inventory for each item is calculated by loading the Bin Contents table where each row is 
+  6. Available inventory for each item is calculated by transforming the Bin Contents table. Each row of Bin Contents represents a known quantity of an item within a warehouse bin. In this example, we will say that only alphabetical bin codes are available while numeric bins are not. Available inventory is found by filtering out these numeric bins then grouping by item code:
+  PICTURE
+
+  7. There are two key factors in handling the many-to-many relationship in this model. The first setting the data type of available inventory/accessory inventory in Bin Contents to text. The second is adding a decimal field called "Backlog Fraction" to the Accessory Kits table, which is the reciprocal of the "Multiplier" field (the number of accessories a given item has).
+  8. When the Accessory Kits table is joined (merged) to the Open Sales Orders table on item number, order lines with accessory-having items will be duplicated/n-tuplicated by the "Multiplier" field where only the accessory items and accessory inventories will be distinct from one another. Order lines without accessories will not be duplicated and contain null values for accessory information:
+  PICTURE
+
+  9. After replacing null values with 0 for "Quantity per Parent" and 1 for "Backlog Fraction," I joined Bin Contents to Open Sales Orders on item number to get available inventory as a text field. Now the table is ready for manipulation in Power BI.
+  10. I added 3 calculated columns and 7 measures to the Open Sales Order table using DAX. These are also essential in handling the many-to-many relationship:
+  - Backlog Qty Number = VALUE('Open Sales Orders'[Backlog Quantity])
+  - Backlog Fraction Number = 'Open Sales Orders'[Backlog Fraction] * 'Open Sales Orders'[Backlog Qty Number]
+  - Has Accessory Kit = IF('Open Sales Orders'[Accessory Item Number] = BLANK(), FALSE(), TRUE())
+  - Backlog Fraction Number Measure = SUM('Open Sales Orders'[Backlog Fraction Number])
+  - Backlog Qty Total = ROUND(SUM('Open Sales Orders'[Backlog Qty Number]), 0)
+  - Accessory Inventory Measure = VALUE(FIRSTNONBLANK('Open Sales Orders'[Accessory Inventory], 'Open Sales Orders'[Accessory Inventory]))
+  - Accessory Quantity Total = [Backlog Qty Total] * VALUE(FIRSTNONBLANK('Open Sales Orders'[Quantity per Parent], 'Open Sales Orders'[Quantity per Parent]))
+  - Available Inventory Measure = VALUE(FIRSTNONBLANK('Open Sales Orders'[Available Inventory], 'Open Sales Orders'[Available Inventory]))
+  - NEED KITS = IF([Accessory Quantity Total] > [Accessory Inventory Measure], "NEED KITS", "OK FOR THIS WEEK")
+  - NEED PARTS = IF([Backlog Fraction Number Measure] > [Available Inventory Measure], "NEED PARTS", IF([Backlog Fraction Number Measure] <= [Available Inventory Measure], "OK FOR THIS WEEK", ""))
+  11. Some of these columns and measures convert the backlog quantity to a number, multiply this number by the backlog fraction row-wise, and sum these values over duplicated rows to reobtain backlog quantity despite duplicated rows.
+  12. Some of the measures take the first non-blank text value for available inventory and convert to a number that can be summarized in a table.
+  13. NEED KITS and NEED PARTS tell the report users whether they need to procure accessory kits/parts before greenlisted orders can ship. These warnings can be found in the Accessory Kits and Item Summary report pages:
+  PICTURE
+
+  14. We can check these warning messages against quantities given on the Greenlist report page:
+  PICTURE
 
   **Advanced Project #7: Consolidated Operating Model**
   
