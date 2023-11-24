@@ -1,0 +1,23 @@
+let
+    Source = Csv.Document(Web.Contents("https://raw.githubusercontent.com/gsolamon/Solamon-Portfolio-Projects/main/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/CSV%20Files/SolaCorp%20Backlog%20CSV.csv"),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Backlog Quantity", Int64.Type}, {"Backlog USD", Currency.Type}, {"Order Date", type date}}),
+    #"Grouped Rows" = Table.Group(#"Changed Type", {"Order Number", "Customer Number", "Region", "Item Number", "Item Description LOOKUP", "Order Date", "Salesperson Code", "Intercompany"}, {{"Backlog Quantity Placeholder", each List.Sum([Backlog Quantity]), type nullable number}, {"Backlog USD", each List.Sum([Backlog USD]), type nullable number}}),
+    #"Added Custom2" = Table.AddColumn(#"Grouped Rows", "Order_Item", each [Order Number] & "_" & [Item Number]),
+    #"Merged Queries3" = Table.NestedJoin(#"Added Custom2", {"Order_Item"}, Greenlist, {"Order_Item"}, "Greenlist", JoinKind.LeftOuter),
+    #"Expanded Greenlist" = Table.ExpandTableColumn(#"Merged Queries3", "Greenlist", {"Order_Item", "Max Number"}, {"Order_Item.1", "Max Number"}),
+    #"Filtered Rows" = Table.SelectRows(#"Expanded Greenlist", each ([Order_Item.1] <> null)),
+    #"Added Custom3" = Table.AddColumn(#"Filtered Rows", "Backlog Quantity", each if [Max Number] < [Backlog Quantity Placeholder] then [Max Number] else [Backlog Quantity Placeholder]),
+    #"Removed Columns" = Table.RemoveColumns(#"Added Custom3",{"Order_Item.1", "Backlog Quantity Placeholder", "Max Number"}),
+    #"Added Custom" = Table.AddColumn(#"Removed Columns", "General Item Description", each Text.BeforeDelimiter([Item Description LOOKUP], " #")),
+    #"Merged Queries" = Table.NestedJoin(#"Added Custom", {"General Item Description"}, #"SolaCorp Product Groups", {"Cooking Appliance"}, "SolaCorp Product Groups", JoinKind.LeftOuter),
+    #"Expanded SolaCorp Product Groups" = Table.ExpandTableColumn(#"Merged Queries", "SolaCorp Product Groups", {"Product Group"}, {"Product Group"}),
+    #"Merged Queries1" = Table.NestedJoin(#"Expanded SolaCorp Product Groups", {"Item Number"}, #"Accessory Kits", {"Appliance Item Number"}, "Accessory Kits", JoinKind.LeftOuter),
+    #"Expanded Accessory Kits" = Table.ExpandTableColumn(#"Merged Queries1", "Accessory Kits", {"Accessory Item Number", "Accessory Item Description", "Quantity per Parent", "Backlog Fraction", "Accessory Inventory"}, {"Accessory Item Number", "Accessory Item Description", "Quantity per Parent", "Backlog Fraction", "Accessory Inventory"}),
+    #"Replaced Value" = Table.ReplaceValue(#"Expanded Accessory Kits",null,1,Replacer.ReplaceValue,{"Backlog Fraction"}),
+    #"Replaced Value2" = Table.ReplaceValue(#"Replaced Value",null,0,Replacer.ReplaceValue,{"Quantity per Parent"}),
+    #"Merged Queries2" = Table.NestedJoin(#"Replaced Value2", {"Item Number"}, #"Bin Contents", {"Item Number"}, "Bin Contents", JoinKind.LeftOuter),
+    #"Expanded Bin Contents" = Table.ExpandTableColumn(#"Merged Queries2", "Bin Contents", {"Available Inventory"}, {"Available Inventory"}),
+    #"Replaced Value1" = Table.ReplaceValue(#"Expanded Bin Contents",null,"0",Replacer.ReplaceValue,{"Accessory Inventory", "Available Inventory"})
+in
+    #"Replaced Value1"
