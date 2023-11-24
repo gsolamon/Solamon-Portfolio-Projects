@@ -5,7 +5,7 @@ In these three advanced projects, I will demonstrate my ability to build semanti
 ### **Project List:**
 
   - [**Project #5:** Projected Ship Dates in the Power Platform](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/a4df116b6ae961cccb0e23dae92cdcf23fd586f1/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI)
-  - [**Project #6:** Greenlist Accessories Report](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/main/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories)
+  - [**Project #6:** Many-to-Many with Greenlist Accessories](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/main/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories)
   - [**Project #7:** Consolidated Operating Model](link incoming)
 
 
@@ -82,20 +82,17 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   10. I added 3 calculated columns and 7 measures to the Open Sales Order table using DAX. These are also essential in handling the many-to-many relationship:
   - Backlog Qty Number = VALUE('Open Sales Orders'[Backlog Quantity])
   - Backlog Fraction Number = 'Open Sales Orders'[Backlog Fraction] * 'Open Sales Orders'[Backlog Qty Number]
-  - Has Accessory Kit = IF('Open Sales Orders'[Accessory Item Number] = BLANK(), FALSE(), TRUE())
   - Backlog Fraction Number Measure = SUM('Open Sales Orders'[Backlog Fraction Number])
   - Backlog Qty Total = ROUND(SUM('Open Sales Orders'[Backlog Qty Number]), 0)
   - Accessory Inventory Measure = VALUE(FIRSTNONBLANK('Open Sales Orders'[Accessory Inventory], 'Open Sales Orders'[Accessory Inventory]))
-  - Accessory Quantity Total = [Backlog Qty Total] * VALUE(FIRSTNONBLANK('Open Sales Orders'[Quantity per Parent], 'Open Sales Orders'[Quantity per Parent]))
   - Available Inventory Measure = VALUE(FIRSTNONBLANK('Open Sales Orders'[Available Inventory], 'Open Sales Orders'[Available Inventory]))
+  - Accessory Quantity Total = [Backlog Qty Total] * VALUE(FIRSTNONBLANK('Open Sales Orders'[Quantity per Parent], 'Open Sales Orders'[Quantity per Parent]))
+  - Has Accessory Kit = IF('Open Sales Orders'[Accessory Item Number] = BLANK(), FALSE(), TRUE())
   - NEED KITS = IF([Accessory Quantity Total] > [Accessory Inventory Measure], "NEED KITS", "OK FOR THIS WEEK")
   - NEED PARTS = IF([Backlog Fraction Number Measure] > [Available Inventory Measure], "NEED PARTS", IF([Backlog Fraction Number Measure] <= [Available Inventory Measure], "OK FOR THIS WEEK", ""))
-  11. Some of these columns and measures convert the backlog quantity to a number, multiply this number by the backlog fraction row-wise, and sum these values over duplicated rows to reobtain backlog quantity despite duplicated rows.
-  12. Some of the measures take the first non-blank text value for available inventory and convert to a number that can be summarized in a table.
-  13. NEED KITS and NEED PARTS tell the report users whether they need to procure accessory kits/parts before greenlisted orders can ship. These warnings can be found in the Accessory Kits and Item Summary report pages:
-  PICTURE
-
-  14. We can check these warning messages against quantities given on the Greenlist report page:
+  11. The first 4 of these columns and measures convert the backlog quantity to a number, multiply this number by the backlog fraction row-wise, and sum these values over duplicated rows to reobtain backlog quantity despite duplicated rows.
+  12. The next 3 measures take the first non-blank text value for available inventory and convert to a number that can be summarized in a table.
+  13. NEED KITS and NEED PARTS let report users know how many of each accessory kit/part they need to procure before greenlisted orders can ship. These warnings can be found in the Accessory Kits and Item Summary report pages:
   PICTURE
 
   **Advanced Project #7: Consolidated Operating Model**
