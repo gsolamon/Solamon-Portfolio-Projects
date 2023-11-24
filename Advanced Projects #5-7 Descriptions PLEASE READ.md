@@ -62,21 +62,21 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   
   1. This report takes the weekly Greenlist (orders that have been approved to ship this week according to the Projected Ship Dates report) and lets the warehouse/Shipping Department know if there are accessory items needed with the shippable appliance. This report is essential at Micromeritics because it prevents the unawareness of required accessory items from holding up large revenue from instruments.
   2. The data model behind this report is unique in that it handles a "many-to-many" relationship between appliances and accessory items. That is, many appliances can have the same accessory and one appliance may have many accessories that go with it. Microsoft warns against using many-to-many relationships without understanding the "significantly different behavior:"
-  PICTURE
+  ![Many-to-Many](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/cc6226a04e2b0abf2df72b8aa7987166e0381296/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories/Images/Many-to-Many.png)
 
   3. For this portfolio project, I tried to limit the size of the dataset while preserving the many-to-many relationship, which is in the LIVE version of this report. Below are SolaCorp's list of accessory kits and their corresponding appliance number(s):
-  PICTURE
+  ![Accessory Kits](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/cc6226a04e2b0abf2df72b8aa7987166e0381296/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories/Images/Accessory%20Kits.png)
 
   4. Note that there are 5 appliances with accessories. Each appliance has between 2 and 6 accessory items. All 5 appliances have the BASIC_KIT accessory. This table defines the many-to-many relationship between appliance and accessory item. The entire data model is given below:
-  PICTURE
+  ![Greenlist Data Model](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/cc6226a04e2b0abf2df72b8aa7987166e0381296/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories/Images/Greenlist%20Data%20Model.png)
 
   5. The Greenlist table is constructed using the same semantic model as the Projected Ship Dates report, filtering only to orders that are projected to ship within the next week. This Greenlist is joined (merged) to the table of open sales order lines and all null rows are filtered out. This leaves only the sales order lines that are expected to ship this week. The Power Query M code for the Open Sales Orders table can be found at this [GitHub location](link incoming).
   6. Available inventory for each item is calculated by transforming the Bin Contents table. Each row of Bin Contents represents a known quantity of an item within a warehouse bin. In this example, we will say that only alphabetical bin codes are available while numeric bins are not. Available inventory is found by filtering out these numeric bins then grouping by item code:
-  PICTURE
+  ![Bin Contents M Code](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/cc6226a04e2b0abf2df72b8aa7987166e0381296/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories/Images/Bin%20Contents%20M%20Code.png)
 
   7. There are two key factors in handling the many-to-many relationship in this model. The first setting the data type of available inventory/accessory inventory in Bin Contents to text. The second is adding a decimal field called "Backlog Fraction" to the Accessory Kits table, which is the reciprocal of the "Multiplier" field (the number of accessories a given item has).
   8. When the Accessory Kits table is joined (merged) to the Open Sales Orders table on item number, order lines with accessory-having items will be duplicated/n-tuplicated by the "Multiplier" field where only the accessory items and accessory inventories will be distinct from one another. Order lines without accessories will not be duplicated and contain null values for accessory information:
-  PICTURE
+  ![N-tuplication](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/cc6226a04e2b0abf2df72b8aa7987166e0381296/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories/Images/N-tuplication.png)
 
   9. After replacing null values with 0 for "Quantity per Parent" and 1 for "Backlog Fraction," I joined Bin Contents to Open Sales Orders on item number to get available inventory as a text field. Now the table is ready for manipulation in Power BI.
   10. I added 3 calculated columns and 7 measures to the Open Sales Order table using DAX. These are also essential in handling the many-to-many relationship:
@@ -93,7 +93,7 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   11. The first 4 of these columns and measures convert the backlog quantity to a number, multiply this number by the backlog fraction row-wise, and sum these values over duplicated rows to reobtain backlog quantity despite duplicated rows.
   12. The next 3 measures take the first non-blank text value for available inventory and convert to a number that can be summarized in a table.
   13. NEED KITS and NEED PARTS let report users know how many of each accessory kit/part they need to procure before greenlisted orders can ship. These warnings can be found in the Accessory Kits and Item Summary report pages:
-  PICTURE
+  ![Accessory Kits Report Page](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/cc6226a04e2b0abf2df72b8aa7987166e0381296/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories/Images/Accessory%20Kits%20Report%20Page.png)
 
   **Advanced Project #7: Consolidated Operating Model**
   
