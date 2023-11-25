@@ -100,10 +100,10 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   1. This operating model and financial three statement describes the performance of the fictitious SolaCorp and subsidiaries (GregCo and Subsidiary Inc). The structure closely resembles a LIVE model that I constructed for Micromeritics Instrument Corporation. However, all invoice, customer, item, and other company information has been redacted. All dates, quantity, and dollar amounts have been obfuscated through a randomized process. The overall size of the dataset has been reduced by randomly removing around 70% of invoice lines.
   2. The model can be found as an Excel file at the following [GitHub location](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/3b853abdf6b039e40eb73ad71fd085658a254f52/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/SolaCorp%20Consolidated%20Operating%20Model.xlsx). Please note that the interest rate calculation feature will not work in the web version of Excel. You must download the file and open in the desktop app to use this feature.
   3. The base dataset of this model can be found in the "Appended Sales" worksheet:
-  PICTURE
+  ![Appended Sales](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Appended%20Sales.png)
 
   4. The dataset is a consolidation of 53,000 invoice lines from 5 databases over a date range of 2019 to 2023. The LIVE version of this model has over 185,000 lines from 13 databses from 2018 to present with dataflows for incorporating live data. Each year of data was consolidated in separate files where static data from past years does not update. This architecture allows for the most efficient data loading into Excel via Power Query:
-  PICTURE
+  ![Data Sources](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Data%20Sources.png)
 
   5. The first step in summarizing this historic invoice data was summarizing appliance sales, cost, and margin data. This analysis can be found in the "SolaCorp Appliance Build" worksheet.
   6. The most critical tables of "SolaCorp Appliance Build" are as follows:
@@ -119,9 +119,9 @@ In these three advanced projects, I will demonstrate my ability to build semanti
 
   7. The worksheet analyzes sales for the top 10 appliances sold by SolaCorp (A-mark, B-atta, C-sharp, etc.). There is also room for the user to project sales for appliances under development (K-dash and L-dot).
   8. The units, % growth ASP, and % growth standard cost tables accept inputs for future years in the form of projected unit sales and % growths (yellow boxes). The rest of the figures are actuals taken by summarizing "Appended Sales:"
-  PICTURE
+  ![Units Inputs](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Units%20Inputs.png)
 
-  8. Once appliance revenue actuals and projections have been built out, we move onto the "Operating Model" worksheet to build out the rest of the business segments. One can also see that SolaCorp Appliance revenue/COGS in row 32 tie out to the "SolaCorp Appliance Build" sheet. Therefore, any changes made to the appliance build will be reflected in the operating model and financials. In other words, this is a dynamic model.
+  8. Once appliance revenue actuals and projections have been built out, we move onto the "Operating Model" worksheet to build out the rest of the business segments. One can also see that SolaCorp Appliance revenue/COGS in Row 32 tie out to the "SolaCorp Appliance Build" sheet. Therefore, any changes made to the appliance build will be reflected in the operating model and financials. In other words, this is a dynamic model.
   9. The business segments are as follows:
   - SolaCorp (with sub-segments for appliances, accessories, parts, OEM, and other)
   - Service (with sub-segments for geographic regions)
@@ -130,46 +130,46 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   - Subsidiary Inc (subsidiary in Austria)
 
   10. The model has actuals for FY19 to FY23 Q3 and allows the user to project % growths for service, lab, GregCo, and Subsidiary Inc through FY28. The SolaCorp sub-segments are projected as a % of SolaCorp appliance revenue:
-  PICTURE
+  ![Revenue Inputs](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Revenue%20Inputs.png)
 
   11. COGS is modeled as a % of sub-segment revenue (100% minus margin %). We use the unit standard cost and quantity on invoice lines to obtain actual standard COGS for FY19 to FY23, and our % of sub-segment revenue to project through FY28.
   12. From our revenue and COGS projections, we can calculate a gross profit and gross margin % for each segment/sub-segment. These should align with our expectations for the business:
-  PICTURE
+  ![Margin %](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Margin%20%25.png)
 
   13. Some of the COGS information is not obtainable from standard cost on the invoice lines. We get some additional COGS from the "Other Cost of Sales Build" and "Service COGS Build" worksheets. These numbers would come from the Accounting Department:
-  PICTURE
+  ![Other Cost of Sales Build](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Other%20Cost%20of%20Sales%20Build.png)
 
   15. Now that we have revenue and COGS from the operating model, we can build out the financials with some additional help from Accounting. The "Salaries Build" and "Non-Salaries Build" worksheets give operating expenses related to headcount, debt, and company ownership:
-  PICTURE
+  ![Non-Salaries Build](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Non-Salaries%20Build.png)
 
   16. After building out these salary and non-salary expenses, we can obtain an EBITDA for SolaCorp in the "Adjusted EBITDA" worksheet:
-  PICTURE
+  ![Adjusted EBITDA](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Adjusted%20EBITDA.png)
 
   17. After obtaining the balance sheets for FY20 to FY22 from Accounting, we can build a financial three statement in the "Financials" worksheet. I have randomized and modified the balance sheets to obtain realistic values for SolaCorp's financials.
   18. The financials consist of 5 sections where the first 3 comprise the three statement:
   - Income statement (takes revenue, COGS, expenses, interest, and tax to give net income)
-  PICTURE
+  ![Income Statement](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Income%20Statement.png)
 
   - Balance sheet (shows actual and projected balances in the major asset/liability accounts along with user inputs for working capital ratios)
-  PICTURE
+  ![Working Capital Ratios](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Working%20Capital%20Ratios.png)
 
   - Cash flow statement (predicts the changes in cash due to income/expenditures)
-  PICTURE
+  ![Cash Flow](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Cash%20Flow.png)
 
   - Debt schedule (allows user to determine how the acquisition-related debt of SolaCorp will be paid down given the cash flow and interest rates)
-  PICTURE
+  ![Debt Schedule](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Debt%20Schedule.png)
 
   - Tax calculation (takes earnings, amortization, and deductible expenses to obtain taxable income then multiplies by the tax rate to estimate taxes)
-  PICTURE
+  ![Tax Calculation](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Tax%20Calculation.png)
 
   19. To allow for interest to be calculated, deducted from taxable income, and allowed to increase next year's cash flow before interest can be recalculated, a circular relationship and iterative calculation must be allowed. To allow for interative calculations in the Excel desktop app, go to File>Options>Formulas>Enable iterative calculation:
-  PICTURE
+  ![Iterative Calculation](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Iterative%20Calculation.png)
 
   20. The model handles this circular relationship using a CHOOSE() function in Row 43 of the "Financials" worksheet. When cell E43 is set to "Clear," future interest expense is set to $0, and nothing is deducted from future taxable income:
-  PICTURE
+  ![Clear Interest](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Clear%20Interest.png)
 
   21. When cell E43 is set to "Calc.," future interest is iteratively calculated given the user inputs in working capital ratios, interest rates, and other expenditures:
-  PICTURE
+  ![Calculate Interest](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Calculate%20Interest.png)
 
   22. Explanations for all Excel formulas in plain-text can be found in Column AA of the "Financials" worksheet:
-  PICTURE
+  ![Formula Explanations](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/46e6f13884c5596d07260b2f81d073881c87e77d/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/Images/Formula%20Explanations.png)
