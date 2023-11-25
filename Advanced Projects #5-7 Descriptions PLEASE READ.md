@@ -8,8 +8,6 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   - [**Project #6:** Many-to-Many with Greenlist Accessories](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/main/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories)
   - [**Project #7:** Consolidated Operating Model and Financials](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/6628975819461a0cdcecdbebcbdea3dae142cc10/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials)
 
-![Portfolio Projects Software](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/717e9ccc0c473482c2dc2ebc0f29abae70ca4cd5/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/Portfolio%20Projects%20Software.png)
-
 ### **Project Summaries:**
 
   **Advanced Project #5: Projected Ship Dates in the Power Platform**
