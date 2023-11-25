@@ -98,7 +98,7 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   **Advanced Project #7: Consolidated Operating Model and Financials**
   
   1. This operating model and financial three statement describes the performance of the fictitious SolaCorp and subsidiaries (GregCo and Subsidiary Inc). The structure closely resembles a LIVE model that I constructed for Micromeritics Instrument Corporation. However, all invoice, customer, item, and other company information has been redacted. All dates, quantity, and dollar amounts have been obfuscated through a randomized process. The overall size of the dataset has been reduced by randomly removing around 70% of invoice lines.
-  2. The model can be found as an Excel file at the following [GitHub location](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/523bf4cc7ae319de4ffe99111d5ce9d313b602d4/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/SolaCorp%20Consolidated%20Operating%20Model.xlsx). Please note that the interest rate calculation feature will not work in the web version of Excel. You must download the file and open in the desktop app to use this feature.
+  2. The model can be found as an Excel file at the following [GitHub location](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/3b853abdf6b039e40eb73ad71fd085658a254f52/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/SolaCorp%20Consolidated%20Operating%20Model.xlsx). Please note that the interest rate calculation feature will not work in the web version of Excel. You must download the file and open in the desktop app to use this feature.
   3. The base dataset of this model can be found in the "Appended Sales" worksheet:
   PICTURE
 
