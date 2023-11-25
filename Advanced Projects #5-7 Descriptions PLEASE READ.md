@@ -105,4 +105,38 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   4. The dataset is a consolidation of 53,000 invoice lines from 5 databases over a date range of 2019 to 2023. The LIVE version of this model has over 185,000 lines from 13 databses from 2018 to present with dataflows for incorporating live data. Each year of data was consolidated in separate files where static data from past years does not update. This architecture allows for the most efficient data loading into Excel via Power Query:
   PICTURE
 
-  5. The first step in summarizing this historic invoice data was summarizing appliance sales, cost, and margin data. This analysis can be found in the "SolaCorp Appliance Build" worksheet:
+  5. The first step in summarizing this historic invoice data was summarizing appliance sales, cost, and margin data. This analysis can be found in the "SolaCorp Appliance Build" worksheet.
+  6. The most critical tables of "SolaCorp Appliance Build" are as follows:
+  - Units Sold per Year
+  - % Growth ASP
+  - ASP by Appliance
+  - Yearly SolaCorp Appliance Revenue
+  - % Growth in Standard Cost
+  - Average Standard Cost
+  - SolaCorp Appliance Costs
+  - Yearly SolaCorp Appliance Gross Profit
+  - SolaCorp Appliance Margin %
+
+  7. The worksheet analyzes sales for the top 10 appliances sold by SolaCorp (A-mark, B-atta, C-sharp, etc.). There is also room for the user to project sales for appliances under development (K-dash and L-dot).
+  8. The units, % growth ASP, and % growth standard cost tables accept inputs for future years in the form of projected unit sales and % growths (yellow boxes). The rest of the figures are actuals taken by summarizing "Appended Sales:"
+  PICTURE
+
+  8. Once appliance revenue actuals and projections have been built out, we move onto the "Operating Model" worksheet to build out the rest of the business segments. One can also see that SolaCorp Appliance revenue/COGS in row 32 tie out to the "SolaCorp Appliance Build" sheet. Therefore, any changes made to the appliance build will be reflected in the operating model and financials. In other words, this is a dynamic model.
+  9. The business segments are as follows:
+  - SolaCorp (with sub-segments for appliances, accessories, parts, OEM, and other)
+  - Service (with sub-segments for geographic regions)
+  - Lab (appliance research directed by SolaCorp for clients)
+  - GregCo (subsidiary in Hungary)
+  - Subsidiary Inc (subsidiary in Austria)
+
+  10. The model has actuals for FY19 to FY23 Q3 and allows the user to project % growths for service, lab, GregCo, and Subsidiary Inc through FY28. The SolaCorp sub-segments are projected as a % of SolaCorp appliance revenue:
+  PICTURE
+
+  11. COGS is modeled as a % of sub-segment revenue (100% minus margin %). We use the unit standard cost and quantity on invoice lines to obtain actual standard COGS for FY19 to FY23, and our % of sub-segment revenue to project through FY28.
+  12. From our revenue and COGS projections, we can calculate a gross profit and gross margin % for each segment/sub-segment. These should align with our expectations for the business:
+  PICTURE
+
+  13. Some of the COGS information is not obtainable from standard cost on the invoice lines. We get some additional COGS from the "Other Cost of Sales Build" and "Service COGS Build" worksheets. These numbers would come from the Accounting Department:
+  PICTURE
+
+  15. Now that we have revenue and COGS from the operating model, we can build out the financials with some additional help from Accounting. The "Salaries Build" and "Non-Salaries Build" worksheets give operating expenses related to headcount
