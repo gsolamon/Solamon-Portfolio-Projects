@@ -139,4 +139,37 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   13. Some of the COGS information is not obtainable from standard cost on the invoice lines. We get some additional COGS from the "Other Cost of Sales Build" and "Service COGS Build" worksheets. These numbers would come from the Accounting Department:
   PICTURE
 
-  15. Now that we have revenue and COGS from the operating model, we can build out the financials with some additional help from Accounting. The "Salaries Build" and "Non-Salaries Build" worksheets give operating expenses related to headcount
+  15. Now that we have revenue and COGS from the operating model, we can build out the financials with some additional help from Accounting. The "Salaries Build" and "Non-Salaries Build" worksheets give operating expenses related to headcount, debt, and company ownership:
+  PICTURE
+
+  16. After building out these salary and non-salary expenses, we can obtain an EBITDA for SolaCorp in the "Adjusted EBITDA" worksheet:
+  PICTURE
+
+  17. After obtaining the balance sheets for FY20 to FY22 from Accounting, we can build a financial three statement in the "Financials" worksheet. I have randomized and modified the balance sheets to obtain realistic values for SolaCorp's financials.
+  18. The financials consist of 5 sections where the first 3 comprise the three statement:
+  - Income statement (takes revenue, COGS, expenses, interest, and tax to give net income)
+  PICTURE
+
+  - Balance sheet (shows actual and projected balances in the major asset/liability accounts along with user inputs for working capital ratios)
+  PICTURE
+
+  - Cash flow statement (predicts the changes in cash due to income/expenditures)
+  PICTURE
+
+  - Debt schedule (allows user to determine how the acquisition-related debt of SolaCorp will be paid down given the cash flow and interest rates)
+  PICTURE
+
+  - Tax calculation (takes earnings, amortization, and deductible expenses to obtain taxable income then multiplies by the tax rate to estimate taxes)
+  PICTURE
+
+  19. To allow for interest to be calculated, deducted from taxable income, and allowed to increase next year's cash flow before interest can be recalculated, a circular relationship and iterative calculation must be allowed. To allow for interative calculations in the Excel desktop app, go to File>Options>Formulas>Enable iterative calculation:
+  PICTURE
+
+  20. The model handles this circular relationship using a CHOOSE() function in Row 43 of the "Financials" worksheet. When cell E43 is set to "Clear," future interest expense is set to $0, and nothing is deducted from future taxable income:
+  PICTURE
+
+  21. When cell E43 is set to "Calc.," future interest is iteratively calculated given the user inputs in working capital ratios, interest rates, and other expenditures:
+  PICTURE
+
+  22. Explanations for all Excel formulas in plain-text can be found in Column AA of the "Financials" worksheet:
+  PICTURE
