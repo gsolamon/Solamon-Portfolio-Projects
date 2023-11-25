@@ -97,4 +97,12 @@ In these three advanced projects, I will demonstrate my ability to build semanti
 
   **Advanced Project #7: Consolidated Operating Model and Financials**
   
-  1. WORK IN PROGRESS
+  1. This operating model and financial three statement describes the performance of the fictitious SolaCorp and subsidiaries (GregCo and Subsidiary Inc). The structure closely resembles a LIVE model that I constructed for Micromeritics Instrument Corporation. However, all invoice, customer, item, and other company information has been redacted. All dates, quantity, and dollar amounts have been obfuscated through a randomized process. The overall size of the dataset has been reduced by randomly removing around 70% of invoice lines.
+  2. The model can be found as an Excel file at the following [GitHub location](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/523bf4cc7ae319de4ffe99111d5ce9d313b602d4/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials/SolaCorp%20Consolidated%20Operating%20Model.xlsx). Please note that the interest rate calculation feature will not work in the web version of Excel. You must download the file and open in the desktop app to use this feature.
+  3. The base dataset of this model can be found in the "Appended Sales" worksheet:
+  PICTURE
+
+  4. The dataset is a consolidation of 53,000 invoice lines from 5 databases over a date range of 2019 to 2023. The LIVE version of this model has over 185,000 lines from 13 databses from 2018 to present with dataflows for incorporating live data. Each year of data was consolidated in separate files where static data from past years does not update. This architecture allows for the most efficient data loading into Excel via Power Query:
+  PICTURE
+
+  5. The first step in summarizing this historic invoice data was summarizing appliance sales, cost, and margin data. This analysis can be found in the "SolaCorp Appliance Build" worksheet:
