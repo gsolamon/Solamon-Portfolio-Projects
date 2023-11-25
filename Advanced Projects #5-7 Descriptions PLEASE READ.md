@@ -6,7 +6,7 @@ In these three advanced projects, I will demonstrate my ability to build semanti
 
   - [**Project #5:** Projected Ship Dates in the Power Platform](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/a4df116b6ae961cccb0e23dae92cdcf23fd586f1/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI)
   - [**Project #6:** Many-to-Many with Greenlist Accessories](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/main/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories)
-  - [**Project #7:** Consolidated Operating Model](link incoming)
+  - [**Project #7:** Consolidated Operating Model and Financials](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/0a06b665bdea5cf7f8e4040777644d4d3de5d62c/Advanced%20Project%20%237%3A%20Consolidated%20Operating%20Model%20and%20Financials)
 
 
 ### **Project Summaries:**
@@ -95,6 +95,6 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   13. NEED KITS and NEED PARTS let report users know how many of each accessory kit/part they need to procure before greenlisted orders can ship. These warnings can be found in the Accessory Kits and Item Summary report pages:
   ![Accessory Kits Report Page](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/cc6226a04e2b0abf2df72b8aa7987166e0381296/Advanced%20Project%20%236%3A%20Many-to-Many%20with%20Greenlist%20Accessories/Images/Accessory%20Kits%20Report%20Page.png)
 
-  **Advanced Project #7: Consolidated Operating Model**
+  **Advanced Project #7: Consolidated Operating Model and Financials**
   
   1. WORK IN PROGRESS
