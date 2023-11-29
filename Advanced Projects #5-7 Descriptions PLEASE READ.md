@@ -18,12 +18,12 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   ![SolaCorp Backlog Lines](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/SolaCorp%20Backlog%20Lines.png)
      
   3. In the live version of this report, the sales/orders/backlog files are created using Power BI Dataflows, Power BI Report Builder, and Power Automate to warehouse in Sharepoint.
-  4. Power BI dataflowsutilize the D365 Business Central dataconnector to pull order lines, match them to invoice lines using the "Order_Line" primary key, and subtract to receive values for "Backlog Quantity" and "Backlog USD." All fully invoiced order lines are eliminated from the backlog. We publish a paginated report version of our sales/orders/backlog to a premium workspace.
+  4. Power BI dataflows utilize the D365 Business Central data connector to pull order lines, join them to invoice lines using the "Order_Line" primary key, and subtract to receive values for "Backlog Quantity" and "Backlog USD." All fully invoiced order lines are eliminated from the backlog. We publish a paginated report version of our sales/orders/backlog to a premium workspace to be called by Power Automate.
   5. We then use Power Automate to refresh our dataset, export 3 paginated reports for sales/orders/backlog, and update 3 Excel files in Sharepoint. The flow structure is given below:
-  PICTURE
+  ![SOB Flow](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/393600421ba0f74157bd1dfa9cd6c2fee0584538/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/SOB%20Flow.png)
 
   6. To decrease the probability of a flow run failure affecting one table more than the other three, I initialize Rand123 (integer between 1 and 3). The value of Rand123 determines the order in which I export and publish to Sharepoint. We use this strategy because the "Export to Paginated Report" action has a moderately high change of failure depending on how many simultaneous calls we make across our organization.
-  7. In the "SolaCorp Backlog.xlsx" file, you can see how I generated the item descriptions using the dimension table in the "Item Description Generator" worksheet. SolaCorp manufactures 181 SKUs of 65 cooking appliances within 9 distinct product groups:
+  7. The "SolaCorp Backlog.xlsx" file represents a simplified version of our automatically updated backlog being warehoused in Sharepoint. You can see how I generated the item descriptions using the dimension table in the "Item Description Generator" worksheet. SolaCorp manufactures 181 SKUs of 65 cooking appliances within 9 distinct product groups:
   
   ![Item Description Generator](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/Item%20Description%20Generator.png)
 
