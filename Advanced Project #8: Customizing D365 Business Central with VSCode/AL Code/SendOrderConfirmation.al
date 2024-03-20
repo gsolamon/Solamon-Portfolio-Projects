@@ -1,28 +1,28 @@
 codeunit 70002 "SendOrderConfirmation"
 {
-    procedure SendOrderConfirmation(orderNo: Text): Boolean
+    procedure SendOrderConfirmation(orderNo: Text): Boolean //Procedure for sending email order confirmation to customer and salesperson; returns TRUE when complete.
 
     var
         ExitValue: Boolean;
 
-        SalesHeaderRec: Record "Sales Header";
+        SalesHeaderRec: Record "Sales Header"; //Variables related to the sales order/customer.
         SellToEmail: Text;
         SellToCustomer: Text;
         SalespersonCode: Text;
         ExternalDocNo: Text;
         OrderValue: Text;
 
-        SalespersonRec: Record "Salesperson/Purchaser";
+        SalespersonRec: Record "Salesperson/Purchaser"; //Variables related to email recipients.
         SalespersonEmailList: Text;
         Recipients: Text;
         CcList: Text;
 
-        DateTodayXml: Text;
+        DateTodayXml: Text; //Variables related to report parameters and dates.
         DateTodayText: Text;
         XmlParameters: Text;
         Format: ReportFormat;
 
-        tmpBlob: Codeunit "Temp Blob";
+        tmpBlob: Codeunit "Temp Blob"; //Variables related to compiling and sending email.
         cnv64: Codeunit "Base64 Convert";
         InStr: Instream;
         OutStr: OutStream;
@@ -34,6 +34,7 @@ codeunit 70002 "SendOrderConfirmation"
     begin
         ExitValue := false;
 
+        //Filters D365 Business Central to the sales order matching orderNo parameter then extracts infomation about the order.
         SalesHeaderRec.Reset;
         SalesHeaderRec.SetRange("No.", orderNo);
         SalesHeaderRec.FindFirst;
@@ -44,6 +45,7 @@ codeunit 70002 "SendOrderConfirmation"
         SalesHeaderRec.CalcFields(Amount);
         OrderValue := Format(SalesHeaderRec.Amount, 0, '<Precision,2:2><Standard Format,0>');
 
+        //Filters D365 Business Central to matching salesperson record then extracts email distribution list.
         SalespersonRec.Reset;
         SalespersonRec.SetRange("Code", SalespersonCode);
         SalespersonRec.FindFirst;
@@ -57,11 +59,13 @@ codeunit 70002 "SendOrderConfirmation"
             CcList := SalespersonEmailList;
         end;
 
+        //Uses today's date and orderNo to set XML report parameters.
         DateTodayXml := Format(System.Today(), 10, '<Year4>-<Month,2>-<Day,2>');
         DateTodayText := Format(System.Today(), 10, '<Month,2>/<Day,2>/<Year4>');
         XmlParameters := '<?xml version="1.0" standalone="yes"?><ReportParameters name="Standard Sales - Order Conf." id="1305"><Options><Field name="LogInteraction">true</Field><Field name="DisplayAssemblyInformation">true</Field><Field name="ArchiveDocument">false</Field></Options><DataItems><DataItem name="Header">VERSION(1) SORTING(Field1,Field3) WHERE(Field3=1(' + orderNo + '))</DataItem><DataItem name="Line">VERSION(1) SORTING(Field3,Field4)</DataItem><DataItem name="AssemblyLine">VERSION(1) SORTING(Field2,Field3)</DataItem><DataItem name="WorkDescriptionLines">VERSION(1) SORTING(Field1)</DataItem><DataItem name="VATAmountLine">VERSION(1) SORTING(Field5,Field9,Field10,Field13,Field16)</DataItem><DataItem name="VATClauseLine">VERSION(1) SORTING(Field5,Field9,Field10,Field13,Field16)</DataItem><DataItem name="ReportTotalsLine">VERSION(1) SORTING(Field1)</DataItem><DataItem name="USReportTotalsLine">VERSION(1) SORTING(Field1)</DataItem><DataItem name="LetterText">VERSION(1) SORTING(Field1)</DataItem><DataItem name="Totals">VERSION(1) SORTING(Field1)</DataItem></DataItems></ReportParameters>';
         tmpBlob.CreateOutStream(OutStr);
 
+        //Saves D365 Business Central order confirmation report (with custom layout) to OutStr then creates email with appealing HTML template that includes an order summary.
         if Report.SaveAs(1305, XmlParameters, Format::Pdf, OutStr) then begin
             tmpBlob.CreateInStream(InStr);
             txtB64 := cnv64.ToBase64(InStr, true);
@@ -74,9 +78,9 @@ codeunit 70002 "SendOrderConfirmation"
             );
             emailMsg.SetRecipients(enum::"Email Recipient Type"::Cc, CcList);
             emailMsg.AddAttachment('MIC Order Confirmation ' + orderNo + '.pdf', 'PDF', txtB64);
-            Email.Send(emailMsg);
+            Email.Send(emailMsg); //Sends email to distribution list specified by sell-to email and salesperson list.
         end;
         ExitValue := true;
-        exit(ExitValue);
+        exit(ExitValue); //Returns TRUE if complete.
     end;
 }
