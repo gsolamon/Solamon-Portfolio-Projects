@@ -15,7 +15,7 @@ In these three advanced projects, I will demonstrate my ability to build semanti
   1. I learned the basics of customizing our D365 Business Central (BC) environments by using Hougaard's [Simple Object Designer](https://www.hougaard.com/designer/). This tools allows us to create new fields, expose fields as APIs for Power BI, and add our custom fields to pages/reports without maintaining a code library.
   2. I used the Simple Object Designer along with Hougaard's extensive [YouTube library](https://www.youtube.com/c/ErikHougaard) of Business Central developer videos as a stepping stone to publishing customizations to Business Central using [Visual Studio Code](https://code.visualstudio.com/Download) (VSCode).
   3. The customization that I will showcase in this portfolio project is a "Release and Send Confirmation" action button on Sales Orders in our LIVE environment:
-    PICTURE
+    [!Release and Send Confirmation](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/b8b99e26c9666aee0220eec6b1929433352f372e/Advanced%20Project%20%238%3A%20Customizing%20D365%20Business%20Central%20with%20VSCode/Images/Release%20and%20Send%20Confirmation.png)
      
   4. This action button sends an email confirmation with PDF attachment to our customers and the corresponding salesperson when their instrument order is released to production.
   5. To build this customization, I wrote a codeunit called SendOrderConfirmation (AL Code found [here]()). This codeunit takes orderNo as a parameter and is called whenever the action button is triggered.
