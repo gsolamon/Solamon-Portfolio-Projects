@@ -36,7 +36,6 @@ In these three advanced projects, I will demonstrate my ability to build semanti
     ![Recipients Information](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/20e34930df43ace5c9f7e27bd5161e18e9dbf87a/Advanced%20Project%20%238%3A%20Customizing%20D365%20Business%20Central%20with%20VSCode/Images/Recipients%20Information.png)
 
   9. The field c006_Email_List is a custom field that I published to the salesperson/purchasers table using table extension 70004. The custom field was added to related pages using page extensions:
-    PICTURE
     
   10. I set the XML report parameters with today's date and orderNo then create an outstream as a temporary blob data type, which will store the PDF attachment report before sending the email:
     ![XML Parameters](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/20e34930df43ace5c9f7e27bd5161e18e9dbf87a/Advanced%20Project%20%238%3A%20Customizing%20D365%20Business%20Central%20with%20VSCode/Images/XML%20Parameters.png)
