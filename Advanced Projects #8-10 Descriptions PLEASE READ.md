@@ -4,9 +4,9 @@ In these three advanced projects, I will demonstrate my ability to build semanti
 
 ### **Project List:**
 
-  - [**Project #5:** Projected Ship Dates in the Power Platform](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/c157b9c3b35e36d1c53749dbf04d1b5745b92b99/Advanced%20Project%20%238%3A%20Customizing%20D365%20Business%20Central%20with%20VSCode)
-  - [**Project #9:** ???]()
-  - [**Project #10:** ???]()
+  - [**Advanced Project #8:** Customizing D365 Business Central with VSCode](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/c157b9c3b35e36d1c53749dbf04d1b5745b92b99/Advanced%20Project%20%238%3A%20Customizing%20D365%20Business%20Central%20with%20VSCode)
+  - [**Advanced Project #9:** ???]()
+  - [**Advanced Project #10:** ???]()
 
 ### **Project Summaries:**
 
