@@ -4,7 +4,7 @@ The purpose of completing these projects is to demonstrate my proficiency in the
 
 ### **Project List:**
 
-  - [**Project #1:** COVID-19 Data Exploration in SQL](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/4ce04f2fe36f4cd38c422f059bd7ce914641a344/Project%20%231%20Queries.sql)
+  - [**Project #1:** COVID-19 Data Exploration in SQL](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/8c31c87b9f98053aa32ae5739cd1c5f1ac1877aa/Project%20%231%3A%20Exploring%20COVID-19%20Data%20in%20SQL/Project%20%231%20Queries.sql)
   - [**Project #2:** COVID-19 Data Visualization in Microsoft Power BI](https://app.powerbi.com/view?r=eyJrIjoiNzUzOGUxOWYtMTdjZi00ZWY2LWEzMWQtNWY0NzkyOTYxMTMxIiwidCI6IjRjY2NhM2I1LTcxY2QtNGU2ZC05NzRiLTRkOWJlYjk2YzZkNiIsImMiOjN9)
   - [**Project #3:** Cleaning Housing Data in SQL (ETL)](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/d77e687f087d7e365c3723597acb71785a1435fb/Project%20%233:%20Cleaning%20Housing%20Data%20in%20SQL%20(ETL)/Parcel%20Queries.sql)
   - [**Project #4:** Visualizing Spotify Data in Python](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/77c68a0648f8fa792d922a3a267448bb718ab321/Project%20%234:%20Visualizing%20Spotify%20Data%20in%20Python/Portfolio%20Project%20%234.ipynb) **NOTE: GitHub does not display all outputs properly.**
