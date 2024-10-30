@@ -1,4 +1,4 @@
-# <u>Capstone Project</u>: Executive Dashboards with Expert Modeling
+# <span class="underline">Capstone Project</span>: Executive Dashboards with Expert Modeling
 
 This capstone project will mirror one of my most valuable reports in production at Micromeritics Instrument Corporation. It delivers a high-level synopsis of operations through well-defined KPIs and intuitive drill-down capabilties. We use the report as our slide deck for weekly revenue meetings because the golden data model behind the report allows the presenter to answer almost any question that a stakeholder can have about our business.
 
