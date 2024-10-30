@@ -15,15 +15,15 @@ This capstone project will mirror one of my most valuable reports in production 
   1. Here is a direct link to the report: [SolaCorp Executive Dashboards]()
   2. The purpose of this report is to provide executive-level stakeholders and key operations personnel with insights into week-over-week manufacturing performance. The most important questions that the report answers are:
 
-  - How much product did we ship last week?
-  - How much revenue can we expect from these shipments?
-  - How much was shipped but not invoiced last week?
-  - How much do we plan on shipping this week (current week greenlist)?
-  - How much of the previous week greenlist did not ship last week?
-  - How much of our CW greenlist is on hold? How much is intercompany? Where are they shipping?
-  - What was the impact of our orders/shipments on the backlog?
-  - What is the composition of our backlog? How much is on hold? What are our top items?
-  - What is our backlog aging? Which orders are the oldest?
+     - How much product did we ship last week?
+     - How much revenue can we expect from these shipments?
+     - How much was shipped but not invoiced last week?
+     - How much do we plan on shipping this week (current week greenlist)?
+     - How much of the previous week greenlist did not ship last week?
+     - How much of our CW greenlist is on hold? How much is intercompany? Where are they shipping?
+     - What was the impact of our orders/shipments on the backlog?
+     - What is the composition of our backlog? How much is on hold? What are our top items?
+     - What is our backlog aging? Which orders are the oldest?
   
   3. The report answers the first four of these questions in the executive summary page:
 
@@ -78,10 +78,12 @@ This capstone project will mirror one of my most valuable reports in production 
   1. When reading data from the Sharepoint warehouse into Power Query, we use the Web Contents connector (because it is significantly faster than the Sharepoint connector).
   2. Because I have already done extensive cleansing when moving data from the "bronze" layer in Business Central to the "silver" layer in the Sharepoint warehouse, the transformation steps in Power Query when building the "golden" layer are fairly simple. For the most part, I only use filtering and aggregation. However, below is an example of a more advanced method that I used:
 
-  - Extracted a previous week (Saturday PM) backlog snapshot from the data warehouse. Added a primary key called "Order_Line," which was defined as {Order Number}_{Line Number}.
-  - Added a "Ship Qty" field to a new table called "Warehouse Shipment Lines" by taking all warehouse shipments up to the end of the previous fiscal week and agregating ship quantity over the primary key (Order_Line).
-  - Added an "Inv Qty" field to the "Warehouse Shipment Lines" table by taking all invoices up to the end of the previous fiscal week, aggregating invoice quantity over the primary key (Order_Line), and joining/merging this field to the "Warehouse Shipment Lines" table on the Order_Line key.
-  - Subtracted "Ship Qty" minus "Inv Qty" to get a new field "Ship-Not-Inv Qty" and "Ship-Not-Inv $" then joined these fields to the PW backlog snapshot to get the list of orders from last week that were shipped but not invoiced by Customer Service. This is one of their most important KPIs and gives a more accurate picture of the Shipping Department's performance.
+     - Extracted a previous week (Saturday PM) backlog snapshot from the data warehouse. Added a primary key called "Order_Line," which was defined as {Order Number}_{Line Number}.
+     - Added a "Ship Qty" field to a new table called "Warehouse Shipment Lines" by taking all warehouse shipments up to the end of the previous fiscal week and agregating ship quantity over the primary key (Order_Line).
+     - Added an "Inv Qty" field to the "Warehouse Shipment Lines" table by taking all invoices up to the end of the previous fiscal week, aggregating invoice quantity over the primary key (Order_Line), and joining/merging this field to the "Warehouse Shipment Lines" table on the Order_Line key.
+     - Subtracted "Ship Qty" minus "Inv Qty" to get a new field "Ship-Not-Inv Qty" and "Ship-Not-Inv $" then joined these fields to the PW backlog snapshot to get the list of orders from last week that were shipped but not invoiced by Customer Service. This is one of their most important KPIs and gives a more accurate picture of the Shipping Department's performance:
+
+  ![Ship-Not-Inv]()
 
   3. Below are some of these principles that I kept in mind to keep the average refresh time under 2 minutes despite the large number of aggregations and joins:
 
@@ -95,13 +97,64 @@ This capstone project will mirror one of my most valuable reports in production 
   
   5. This "golden" data model is expertly built for the following reasons:
 
-  - All fact tables (tables with red stars) are built using star schema and are always the "many" part of a one-to-many relationship (yellow highlight). This feature is essential for having performant visuals and simple DAX.
-  - Dimension tables (labeled with blue "d") are always the "one" side of a one-to-many relationship. Furthermore, I use dimension tables for slicers with single-direction filtering whenever possible.
-  - I have dedicated date tables for the current backlog, historic parts backlog, historic instruments backlog, and sales/orders tables so that these dimension tables can be as short as possible.
-  - Instead of using one wide, highly granular fact table, I use 7 narrow, pre-aggregated fact tables to optimize visual and slicer performance.
-  - I handle a many-to-many relationship between sales/order week and fiscal week using a bridge table (labeled with green "B"). A given sales/order week can have many sales, and a given fiscal week can have many dates.
+     - All fact tables (tables with red stars) are built using star schema and are always the "many" part of a one-to-many relationship (yellow highlight). This feature is essential for having performant visuals and simple DAX.
+     - Dimension tables (labeled with blue "d") are always the "one" side of a one-to-many relationship. Furthermore, I use dimension tables for slicers with single-direction filtering whenever possible.
+     - I have dedicated date tables for the current backlog, historic parts backlog, historic instruments backlog, and sales/orders tables so that these dimension tables can be as short as possible.
+     - Instead of using one wide, highly granular fact table, I use 7 narrow, pre-aggregated fact tables to optimize visual and slicer performance.
+     - I handle a many-to-many relationship between sales/order week and fiscal week using a bridge table (labeled with green "B"). A given sales/order week can have many sales, and a given fiscal week can have many dates.
 
 
   **Build Phase #4: DAX Measures and Dashboarding in Power BI**
   
-  1. 
+  When a data model is well-built, we can avoid using complex DAX to tell our data story. For each of the following report pages, I will briefly describe the purpose, features, and any DAX that was required to build the view.
+  
+  1. Summary:
+
+     - The purpose is to summarize Operations, Shipping, and Customer Service KPIs and provide stakeholders with an estimate of this week's revenue.
+     - There is no advanced DAX on this slide (only SUM over 4 pre-filtered tables).
+  
+  2. PW Inst. Shipments vs. Greenlist:
+
+     - This page shows the breakdown of PW sales by instrument and the composition of the CW greenlist. Carryover on the CW greenlist from the PW greenlist is shown as yellow:
+
+      ![CW Greenlist by Inst.]()
+
+     - We accomplish this conditional formatting using DAX and the field value conditional formatting option:
+
+      ![Color Carryover]()
+  
+  3. CW Greenlist:
+
+     - This page gives details on the CW greenlist and allows users to slice the table to know what percentage of the greenlist belongs to a certain category:
+
+     ![CW Greenlist Notes]()
+
+     - Some of the DAX on this page is advanced. For example, the "Instrument" column takes each order line of the greenlist, assigns an instrument with " xQty" if more than one are being sold to "Instrument Quantity," and aggregates over the order number with CONCATENATEX to get a comma separated list of instruments for each order:
+
+     ![CW Greenlist Instruments DAX]()
+
+     - The % of Total DAX is also complex, but we will cover it in the next page.
+  
+  4. Inst. Shipments:
+
+     - This page delivers a similar view of instrument sales, but the users can slice by fiscal week and instrument. This is the most important page for determining the volume and mix of our shipments:
+ 
+     ![Inst. Shipments Notes]()
+
+     - The "% of Total" DAX measure is one of the most elegant measures in this report. It lets the user set the fiscal week slicer to any combination of weeks, treats this filter context as 100%, and then allows the user to set other slicers (like instrument, country, intercomapny, or customer) to give a percent of subtotal for that given timeframe:
+
+     ![Percent of Total]()
+  
+  6. Instrument Backlog:
+
+     - This and the following pages are true dashboards that provide the user with countless options for slicing and drilling into data. We have used it at our company to identify orders that should be taken off hold, which instruments to prioritize building, and how our backlog is trending.
+
+     ![Instrument Backlog Notes]()
+
+     - I used DAX to build the "By Order Age" graph by adding two calculated column to the backlog called "Aging Days" and "Aging Category." Aging days is defined as the duration between today and order date. Aging Category groups orders into <30d, 30d+, 60d+, 90d+, 180d+ based upon aging days. The most complex DAX in this graph is what I used to set the y-axis scale:
+ 
+     ![Aging Scale DAX]()
+
+     - The measures related to the fiscal calendar in the "CY Orders and Shipments" visual are fairly advanced because of the many-to-many relationship. 
+  
+  8. Parts-Only Backlog:
