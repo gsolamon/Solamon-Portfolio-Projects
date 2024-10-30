@@ -5,7 +5,7 @@ This capstone project will mirror one of my most valuable reports in production 
 ### **Project Phases:**
 
   - [Final Product: Executive Dashboards](#final-product:-executive-dashboards)
-  - [**Build Phase #1:** ERP Customizations with D365 Business Central AL](#build-phase-#1:-erp-customizations-with-d365-business-central-al)
+  - [**Build Phase #1:** ERP Customizations with D365 Business Central AL](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/9abd02fdadf22739157f6e25bbfb63df04dfebca/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling)
   - [**Build Phase #2:** Orchestrating Dataflows with Power Automate and Sharepoint](#build-phase-#2:-orchstrating-dataflows-with-power-automate-and=sharepoint)
   - [**Build Phase #3:** ETL and Data Modeling with Power Query M](#build-phase-#3:-etl-and-data-modeling-with-power-query-m)
   - [**Build Phase #4:** DAX Measures and Dashboarding in Power BI](#build-phase-#4:-dax-measures-and-dashboarding-in-power-bi)
