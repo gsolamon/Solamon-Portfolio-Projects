@@ -51,10 +51,10 @@ This capstone project will mirror one of my most valuable reports in production 
 
   <img src="https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/bbd35d9f215912d5206d104a39e9f617f9418c6d/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/Images/StyleExprNo.png" width="400"/>
 
-  5. I also added 3 actions to the page to allow users to toggle between color statuses. If you would like to see how these are written in AL code, please see [this file]().
+  5. I also added 3 actions to the page to allow users to toggle between color statuses. If you would like to see how these are written in AL code, please see [this folder](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/61c226c61733c106daf202f25cbc76a02578f99f/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/AL%20Code).
   6. The final major feature that I added was a "Recent Greenlist" field, which takes the system current datetime and subtracts from a custom field "Added to Greenlist DateTime" to get a duration. If this duration is less than 24 hours, the field is set to "24 hr." Here is the AL code for this feature:
 
-  <img src="https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/bbd35d9f215912d5206d104a39e9f617f9418c6d/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/Images/Recent%20Greenlist.png" width="500"/>
+  <img src="https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/bbd35d9f215912d5206d104a39e9f617f9418c6d/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/Images/Recent%20Greenlist.png" width="700"/>
 
 
   **Build Phase #2: Orchestrating Dataflows with Power Automate and Sharepoint**
