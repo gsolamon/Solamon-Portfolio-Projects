@@ -12,7 +12,7 @@ This capstone project will mirror one of my most valuable reports in production 
 
 ### **Final Product: Executive Dashboards**
 
-  1. Here is a direct link to the report: [SolaCorp Executive Dashboards](). If you would like to download the PBIX file, it can be found at [this GitHub location](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/9abd02fdadf22739157f6e25bbfb63df04dfebca/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling).
+  1. Here is a direct link to web version the report: [SolaCorp Executive Dashboards](). If you would like to download the PBIX file, it can be found at [this GitHub location](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/9abd02fdadf22739157f6e25bbfb63df04dfebca/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling).
   2. The purpose of this report is to provide executive-level stakeholders and key operations personnel with insights into week-over-week manufacturing performance. The most important questions that the report answers are:
 
      - How much product did we ship last week?
