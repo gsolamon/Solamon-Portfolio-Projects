@@ -155,7 +155,7 @@ This capstone project will mirror one of my most valuable reports in production 
  
      <img src="https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/4fc6742ec3f5c9a353d6c54f0b964d967752c8dd/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/Images/Aging%20Scale%20DAX.png" width="500"/>
 
-     - The measures related to the fiscal calendar in the "CY Orders and Shipments" visual are fairly advanced because of the many-to-many relationship. I have DAX measures in the "Fiscal Weeks Bridge" table for [Today], [Current Fiscal Week], and [Previous Fiscal Week], which allows me to use these in a calculated column called "Fiscal Weeks Slicer:"
+     - The measures related to the fiscal calendar in the "CY Orders and Shipments" visual are fairly advanced because of the many-to-many relationship. I have DAX measures in the "Fiscal Weeks Bridge" table for [Today], [Current Fiscal Week], and [Previous Fiscal Week], which allows me to use these in a calculated column called "Fiscal Week Slicer:"
 
      <img src="https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/4fc6742ec3f5c9a353d6c54f0b964d967752c8dd/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/Images/Fiscal%20Week%20Slicer%20DAX.png" width="500"/>
 
