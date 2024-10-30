@@ -85,9 +85,9 @@ This capstone project will mirror one of my most valuable reports in production 
 
   3. Below are some of these principles that I kept in mind to keep the average refresh time under 2 minutes despite the large number of aggregations and joins:
 
-  - Use normalized data to import narrow fact tables and short as possible dimension tables.
-  - Filter rows, remove columns, join, and group before using transformations that will break query folding like change type, add index, or window functions.
-  - Pre-aggregating tables where you don't need high granularity will give you performance when loading visuals/slicing, but it will slow down refresh times. Push these types of pre-aggregations to the silver layer.
+     - Use normalized data to import narrow fact tables and short as possible dimension tables.
+     - Filter rows, remove columns, join, and group before using transformations that will break query folding like change type, add index, or window functions.
+     - Pre-aggregating tables where you don't need high granularity will give you performance when loading visuals/slicing, but it will slow down refresh times. Push these types of pre-aggregations to the silver layer.
 
   4. After applying these transformation steps in Power Query, we now build the relationships between the tables in the model view of Power BI:
  
