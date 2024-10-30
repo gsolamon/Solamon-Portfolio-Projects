@@ -99,7 +99,7 @@ This capstone project will mirror one of my most valuable reports in production 
 
      - All fact tables (tables with red stars) are built using star schema and are always the "many" part of a one-to-many relationship (yellow highlight). This feature is essential for having performant visuals and simple DAX.
      - Dimension tables (labeled with blue "d") are always the "one" side of a one-to-many relationship. Furthermore, I use dimension tables for slicers with single-direction filtering whenever possible.
-     - I have dedicated date tables for the current backlog, historic parts backlog, historic instruments backlog, and sales/orders tables so that these dimension tables can be as short as possible.
+     - I have dedicated date tables for the current backlog, historic parts backlog, historic instruments backlog, and sales/orders tables so that these dimension tables can be as short as possible and can have their own slicers.
      - Instead of using one wide, highly granular fact table, I use 7 narrow, pre-aggregated fact tables to optimize visual and slicer performance.
      - I handle a many-to-many relationship between sales/order week and fiscal week using a bridge table (labeled with green "B"). A given sales/order week can have many sales, and a given fiscal week can have many dates.
 
