@@ -28,6 +28,8 @@ This capstone project will mirror one of my most valuable reports in production 
   3. The report answers the first four of these questions in the executive summary page:
 
   ![Executive Summary](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/bbd35d9f215912d5206d104a39e9f617f9418c6d/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/Images/Executive%20Summary.png)
+
+  <img src="https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/bbd35d9f215912d5206d104a39e9f617f9418c6d/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/Images/Executive%20Summary.png" width="200"/>
      
   4. The rest can be answered in subsequent pages with user-friendly interfaces:
 
