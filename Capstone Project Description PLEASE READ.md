@@ -165,4 +165,4 @@ This capstone project will mirror one of my most valuable reports in production 
   
   6. Parts-Only Backlog:
 
-      - This page provides a similar BI value as the previous page. However, it only looks at parts-only orders (no instruments). This partitioning provides a visibility to small orders that may be overlooked in preference of higher revenue instrument orders, which causes customer complaints and downtime.
+      - This page provides a similar BI value as the previous page. However, it only looks at parts-only orders (no instruments). This partitioning provides a visibility to small orders that may be overlooked in preference of higher revenue instrument orders, which prevents customer complaints and downtime.
