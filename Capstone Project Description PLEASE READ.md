@@ -81,7 +81,7 @@ This capstone project will mirror one of my most valuable reports in production 
      - Extracted a previous week (Saturday PM) backlog snapshot from the data warehouse. Added a primary key called "Order_Line," which was defined as {Order Number}_{Line Number}.
      - Added a "Ship Qty" field to a new table called "Warehouse Shipment Lines" by taking all warehouse shipments up to the end of the previous fiscal week and agregating ship quantity over the primary key (Order_Line).
      - Added an "Inv Qty" field to the "Warehouse Shipment Lines" table by taking all invoices up to the end of the previous fiscal week, aggregating invoice quantity over the primary key (Order_Line), and joining/merging this field to the "Warehouse Shipment Lines" table on the Order_Line key.
-     - Subtracted "Ship Qty" minus "Inv Qty" to get a new field "Ship-Not-Inv Qty" and "Ship-Not-Inv $" then joined these fields to the PW backlog snapshot to get the list of orders from last week that were shipped but not invoiced by Customer Service. This is one of their most important KPIs and gives a more accurate picture of the Shipping Department's performance:
+     - Subtracted "Ship Qty" minus "Inv Qty" to get a new field "Ship-Not-Inv Qty" then used unit price to get "Ship-Not-Inv $" then joined these fields to the PW backlog snapshot to get the list of orders from last week that were shipped but not invoiced by Customer Service. This is one of their most important KPIs and gives a more accurate picture of the Shipping Department's performance:
 
   <img src="https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/099e82f8c1701655a8dcc611ec2f22569b129a61/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling/Images/Ship-Not-Inv.png" width="900"/>
 
