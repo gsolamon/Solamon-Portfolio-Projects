@@ -141,7 +141,7 @@ This capstone project will mirror one of my most valuable reports in production 
  
      ![Inst. Shipments Notes]()
 
-     - The "% of Total" DAX measure is one of the most elegant measures in this report. It lets the user set the fiscal week slicer to any combination of weeks, treats this filter context as 100%, and then allows the user to set other slicers (like instrument, country, intercomapny, or customer) to give a percent of subtotal for that given timeframe:
+     - The "% of Total" DAX measure is one of the most elegant measures in this report. It lets the user set the fiscal week slicer to any combination of weeks, treats this filter context as 100%, and then allows the user to set other slicers (like instrument, country, intercompany, or customer) to give a percent of subtotal for that given timeframe:
 
      ![Percent of Total]()
   
@@ -155,6 +155,14 @@ This capstone project will mirror one of my most valuable reports in production 
  
      ![Aging Scale DAX]()
 
-     - The measures related to the fiscal calendar in the "CY Orders and Shipments" visual are fairly advanced because of the many-to-many relationship. 
+     - The measures related to the fiscal calendar in the "CY Orders and Shipments" visual are fairly advanced because of the many-to-many relationship. I have DAX measures in the "Fiscal Weeks Bridge" table for [Today], [Current Fiscal Week], and [Previous Fiscal Week], which allows me to use these in a calculated column called "Fiscal Weeks Slicer:"
+
+     ![Fiscal Week Slicer DAX]()
+
+     - Using this calculated column in a slicer allows me to set the default value of the slicer to "Previous Fiscal Week" so that the data updates from week to week without the user needing to change the slicer. However, the user can still see any combination of past fiscal weeks if they desire:
+
+     ![Fiscal Week Slicer Selection]()
   
-  8. Parts-Only Backlog:
+  7. Parts-Only Backlog:
+
+     - This page provides a similar BI value as the previous page. However, it only looks at parts-only orders (no instruments). This partitioning provides a visibility to small orders that may be overlooked in preference of higher revenue instrument orders, which causes customer complaints and downtime.
