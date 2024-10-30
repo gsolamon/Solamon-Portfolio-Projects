@@ -1,0 +1,25 @@
+Order Number,Customer Number,Customer Name,Notes,Uninvoiced Amount,On Hold,Country Code,Intercompany
+O-04356,C-2829,,,"$77,534",,SA,Not IC
+O-04968,C-6030,,,"$90,087",,KZ,Not IC
+O-05373,C-5831,,,"$66,457",HFT,IN,Not IC
+O-06222,C-4633,,,"$147,881",ADM,TH,Not IC
+O-06673,C-3134,,,"$27,345",,IN,Not IC
+O-07106,C-3935,,,"$29,318",HFT,IN,Not IC
+O-07447,C-1036,,,$103,,US,Not IC
+O-07584,C-7944,,,"$27,707",,US,Not IC
+O-07667,C-5036,,,"$17,017",ADM,BR,Not IC
+O-07713,C-7736,,,"$31,363",,TH,Not IC
+O-07787,C-9655,,,"$11,100",,CL,Not IC
+O-07852,C-2037,,,"$5,180",,US,Not IC
+O-07937,C-4437,,,"$53,766",,US,Not IC
+O-08109,C-6837,,,"$5,868",,KR,Intercompany
+O-08121,C-7237,,,"$10,574",,AE,Not IC
+O-08145,C-0757,,,"$32,820",,US,Not IC
+O-08150,C-2340,,,"$24,731",,US,Not IC
+O-08160,C-7832,,,"$1,098",,US,Not IC
+O-08164,C-8137,,,"$16,000",,AU,Not IC
+O-08173,C-4527,,,"$20,583",,FR,Intercompany
+O-08178,C-8537,,,"$6,578",,US,Not IC
+O-08209,C-8937,,,"$3,259",,DE,Intercompany
+O-08211,C-9237,,,"$6,853",,US,Not IC
+O-08233,C-9437,,,"$6,287",,ES,Not IC

@@ -1,0 +1,24 @@
+Order Number,Customer Number,Customer Name,Notes,Uninvoiced Amount,On Hold,Country Code,Intercompany,Uninvoiced Qty,Item Number,Instrument Category,Instrument,Line Number
+O-05373,C-5831,,,"$45,527",,IN,Not IC,1,C0050,SolaCorp Instrument,Bass,10000
+O-06222,C-4633,,,"$110,046",,TH,Not IC,1,C5300,SolaCorp Instrument,Oboe,10000
+O-06673,C-3134,,,"$2,735",,IN,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-08150,C-2340,,,"$4,528",,US,Not IC,1,C0000,SolaCorp Instrument,Bass,10000
+O-08160,C-7832,,,"$2,854",,US,Not IC,1,C0000,SolaCorp Instrument,Bass,10000
+O-08164,C-8137,,,"$1,490",,AU,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-08173,C-4527,,,"$6,249",,FR,Intercompany,1,C0050,SolaCorp Instrument,Bass,10000
+O-07447,C-1036,,,"$17,648",,US,Not IC,1,X0115,GregCo Instrument,Bassoon,10000
+O-07561,C-3036,,,"$10,538",,US,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-07667,C-5036,,,"$9,580",,BR,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-07737,C-9236,,,"$7,900",,SI,Not IC,1,B0050,SolaCorp Instrument,Grand Piano,10000
+O-07778,C-0637,,,"$7,546",,US,Not IC,1,C0000,SolaCorp Instrument,Bass,10000
+O-07779,C-0837,,,"$14,370",,US,Not IC,1,B1000,SolaCorp Instrument,Violin,10000
+O-07787,C-9655,,,"$1,678",,CL,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-07812,C-1537,,,"$22,638",,IT,Not IC,1,C0000,SolaCorp Instrument,Bass,10000
+O-07876,C-2537,,,"$13,472",,NO,Not IC,1,B1000,SolaCorp Instrument,Violin,10000
+O-07916,C-4037,,,"$17,213",,IN,Not IC,1,B0050,SolaCorp Instrument,Grand Piano,10000
+O-07937,C-4437,,,"$16,026",,US,Not IC,1,C0050,SolaCorp Instrument,Bass,10000
+O-07957,C-6610,,,"$47,811",,US,Not IC,1,C0000,SolaCorp Instrument,Bass,10000
+O-08007,C-5737,,,"$12,677",,CN,Intercompany,1,C0000,SolaCorp Instrument,Bass,10000
+O-08045,C-7536,,,"$41,575",,KR,Intercompany,1,C0200,SolaCorp Instrument,Electric Guitar,10000
+O-08046,C-4023,,,"$5,006",,FR,Intercompany,1,B1000,SolaCorp Instrument,Violin,10000
+O-08056,C-8965,,,"$48,294",,US,Not IC,1,C0000,SolaCorp Instrument,Bass,10000

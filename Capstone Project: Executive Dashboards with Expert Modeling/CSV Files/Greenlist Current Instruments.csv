@@ -1,0 +1,25 @@
+Order Number,Customer Number,Customer Name,Notes,Uninvoiced Amount,On Hold,Country Code,Intercompany,Uninvoiced Qty,Item Number,Instrument Category,Instrument,Line Number
+O-04356,C-2829,,,"$23,513",,SA,Not IC,1,C0300,SolaCorp Instrument,Electric Guitar,10000
+O-04968,C-6030,,,"$88,908",,KZ,Not IC,2,X0115,GregCo Instrument,Bassoon,10000
+O-05373,C-5831,,,"$60,085",HFT,IN,Not IC,1,C0050,SolaCorp Instrument,Bass,10000
+O-05373,C-5831,,,"$12,000",HFT,IN,Not IC,1,B1000,SolaCorp Instrument,Violin,20000
+O-06222,C-4633,,,"$55,295",ADM,TH,Not IC,3,C5300,SolaCorp Instrument,Oboe,10000
+O-06222,C-4633,,,"$20,000",ADM,TH,Not IC,1,X0115,GregCo Instrument,Bassoon,20000
+O-06673,C-3134,,,"$12,305",,IN,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-07106,C-3935,,,"$9,919",HFT,IN,Not IC,1,B1000,SolaCorp Instrument,Violin,10000
+O-07584,C-7944,,,"$76,800",,US,Not IC,6,C5300,SolaCorp Instrument,Oboe,10000
+O-07584,C-7944,,,"$22,000",,US,Not IC,1,C0300,SolaCorp Instrument,Electric Guitar,20000
+O-07667,C-5036,,,"$15,568",ADM,BR,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-07787,C-9655,,,"$8,390",,CL,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-07852,C-2037,,,"$1,916",,US,Not IC,1,B1000,SolaCorp Instrument,Violin,10000
+O-07937,C-4437,,,"$16,026",,US,Not IC,1,C0050,SolaCorp Instrument,Bass,10000
+O-08109,C-6837,,,"$10,897",,KR,Intercompany,2,B1000,SolaCorp Instrument,Violin,10000
+O-08121,C-7237,,,"$7,185",,AE,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-08145,C-0757,,,"$13,583",,US,Not IC,1,C0000,SolaCorp Instrument,Bass,10000
+O-08150,C-2340,,,"$4,528",,US,Not IC,1,C0000,SolaCorp Instrument,Bass,10000
+O-08160,C-7832,,,"$2,854",,US,Not IC,1,C0000,SolaCorp Instrument,Bass,10000
+O-08164,C-8137,,,"$1,490",,AU,Not IC,1,B0000,SolaCorp Instrument,Grand Piano,10000
+O-08173,C-4527,,,"$6,249",,FR,Intercompany,1,C0050,SolaCorp Instrument,Bass,10000
+O-08178,C-8537,,,"$7,840",,US,Not IC,1,C0300,SolaCorp Instrument,Electric Guitar,10000
+O-08211,C-9237,,,"$10,179",,US,Not IC,1,B1000,SolaCorp Instrument,Violin,10000
+O-08233,C-9437,,,"$11,676",,ES,Not IC,1,B1000,SolaCorp Instrument,Violin,10000
