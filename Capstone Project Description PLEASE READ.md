@@ -4,7 +4,7 @@ This capstone project will mirror one of my most valuable reports in production 
 
 ### **Project Phases:**
 
-  - [**Final Product:** Executive Dashboards](#final-product:-executive-dashboards)
+  - [Final Product: Executive Dashboards](#final-product:-executive-dashboards)
   - [**Build Phase #1:** ERP Customizations with D365 Business Central AL](#build-phase-#1:-erp-customizations-with-d365-business-central-al)
   - [**Build Phase #2:** Orchestrating Dataflows with Power Automate and Sharepoint](#build-phase-#2:-orchstrating-dataflows-with-power-automate-and=sharepoint)
   - [**Build Phase #3:** ETL and Data Modeling with Power Query M](#build-phase-#3:-etl-and-data-modeling-with-power-query-m)
