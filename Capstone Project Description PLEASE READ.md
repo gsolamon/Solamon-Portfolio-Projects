@@ -12,11 +12,7 @@ This capstone project will mirror one of my most valuable reports in production 
 
 ### **Final Product: Executive Dashboards**
 
-Here is an embedded version of the report:
-
-<iframe title="SolaCorp Executive Dashboards" width="1024" height="612" src="https://app.powerbi.com/view?r=eyJrIjoiYTNhN2MyNDgtNjYzNC00NWVlLTg5OGMtMjFjNjliMTA2NTVkIiwidCI6IjQ1YTRkZjNhLTRiNzctNDI2OS04ODQ0LWE5YmJkMmMyOGE4ZiIsImMiOjF9&pageName=a2024ba0b830a19b3c08" frameborder="0" allowFullScreen="true"></iframe>
-
-  1. If you would like to download the PBIX file, it can be found at [this GitHub location](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/9abd02fdadf22739157f6e25bbfb63df04dfebca/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling).
+  1. Here is a direct link to [the Power BI report](https://app.powerbi.com/view?r=eyJrIjoiYTNhN2MyNDgtNjYzNC00NWVlLTg5OGMtMjFjNjliMTA2NTVkIiwidCI6IjQ1YTRkZjNhLTRiNzctNDI2OS04ODQ0LWE5YmJkMmMyOGE4ZiIsImMiOjF9&pageName=a2024ba0b830a19b3c08). If you would like to download the PBIX file, it can be found at [this GitHub location](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/9abd02fdadf22739157f6e25bbfb63df04dfebca/Capstone%20Project%3A%20Executive%20Dashboards%20with%20Expert%20Modeling).
   2. The purpose of this report is to provide executive-level stakeholders and key operations personnel with insights into week-over-week manufacturing performance. The most important questions that the report answers are:
 
      - How much product did we ship last week?
