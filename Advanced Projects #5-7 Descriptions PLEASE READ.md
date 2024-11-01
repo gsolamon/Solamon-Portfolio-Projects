@@ -12,42 +12,43 @@ In these three advanced projects, I will demonstrate my ability to build semanti
 
   **Advanced Project #5: Projected Ship Dates in the Power Platform**
   
-  1. This dataflow/report takes the order backlog of the fictitious company "SolaCorp" and organizes it into a queue, assigning projected ship dates by taking into account output rates, production delays, orders on hold, and hot orders.
-  2. The primary fact table of this model is the backlog (found at [SolaCorp Backlog.xlsx](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/a4df116b6ae961cccb0e23dae92cdcf23fd586f1/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/SolaCorp%20Backlog.xlsx)). Each line of the backlog is an open order line:
+  1. The PBIX file for this report can be found in [this GitHub folder](https://github.com/gsolamon/Solamon-Portfolio-Projects/tree/626e5d90c455370fc7b1581583e9584a4053ef68/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI). I could not publish the live report to the web because it has row-level security.
+  2. This dataflow/report takes the order backlog of the fictitious company "SolaCorp" and organizes it into a queue, assigning projected ship dates by taking into account output rates, production delays, orders on hold, and hot orders. It mirrors one of our most important production planning/customer relations reports at Micromeritics Instrument Corporation. We use it to determine instrument build order and communicate projected ship dates to customers.
+  3. The primary fact table of this model is the backlog (found at [SolaCorp Backlog.xlsx](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/a4df116b6ae961cccb0e23dae92cdcf23fd586f1/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/SolaCorp%20Backlog.xlsx)). Each line of the backlog is an open order line:
   
   ![SolaCorp Backlog Lines](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/SolaCorp%20Backlog%20Lines.png)
      
-  3. In the live version of this report, the sales/orders/backlog files are created using Power BI Dataflows, Power BI Report Builder, and Power Automate to warehouse in Sharepoint.
-  4. Power BI dataflows utilize the D365 Business Central data connector to pull order lines, join them to invoice lines using the "Order_Line" primary key, and subtract to receive values for "Backlog Quantity" and "Backlog USD." All fully invoiced order lines are eliminated from the backlog. We publish a paginated report version of our sales/orders/backlog to a premium workspace to be called by Power Automate.
-  5. We then use Power Automate to refresh our dataset, export 3 paginated reports for sales/orders/backlog, and update 3 Excel files in Sharepoint. The flow structure is given below:
+  4. In the live version of this report, the sales/orders/backlog files are created using Power BI Dataflows, Power BI Report Builder, and Power Automate to warehouse in Sharepoint.
+  5. Power BI dataflows utilize the D365 Business Central data connector to pull order lines, join them to invoice lines using the "Order_Line" primary key, and subtract to receive values for "Backlog Quantity" and "Backlog USD." All fully invoiced order lines are eliminated from the backlog. We publish a paginated report version of our sales/orders/backlog to a premium workspace to be called by Power Automate.
+  6. We then use Power Automate to refresh our dataset, export 3 paginated reports for sales/orders/backlog, and update 3 Excel files in Sharepoint. The flow structure is given below:
   ![SOB Flow](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/393600421ba0f74157bd1dfa9cd6c2fee0584538/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/SOB%20Flow.png)
 
-  6. To decrease the probability of a flow run failure affecting one table more than the other two, I initialize Rand123 (integer between 1 and 3). The value of Rand123 determines the order in which I export and publish to Sharepoint. We use this strategy because the "Export to Paginated Report" action has a moderately high change of failure depending on how many simultaneous calls we make across our organization.
-  7. The "SolaCorp Backlog.xlsx" file represents a simplified version of our automatically updated backlog being warehoused in Sharepoint. You can see how I generated the item descriptions using the dimension table in the "Item Description Generator" worksheet. SolaCorp manufactures 181 SKUs of 65 cooking appliances within 9 distinct product groups:
+  7. To decrease the probability of a flow run failure affecting one table more than the other two, I initialize Rand123 (integer between 1 and 3). The value of Rand123 determines the order in which I export and publish to Sharepoint. We use this strategy because the "Export to Paginated Report" action has a moderately high change of failure depending on how many simultaneous calls we make across our organization.
+  8. The "SolaCorp Backlog.xlsx" file represents a simplified version of our automatically updated backlog being warehoused in Sharepoint. You can see how I generated the item descriptions using the dimension table in the "Item Description Generator" worksheet. SolaCorp manufactures 181 SKUs of 65 cooking appliances within 9 distinct product groups:
   
   ![Item Description Generator](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/Item%20Description%20Generator.png)
 
-  8. The [SolaCorp Projected Ship Dates.pbix](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/b82648b4fd81018d272351dcee86be3753a5895c/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/SolaCorp%20Projected%20Ship%20Dates.pbix) file contains the report interface that is used by production planners, salespeople, and customer service representatives across the organization:
+  9. The [SolaCorp Projected Ship Dates.pbix](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/b82648b4fd81018d272351dcee86be3753a5895c/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/SolaCorp%20Projected%20Ship%20Dates.pbix) file contains the report interface that is used by production planners, salespeople, and customer service representatives across the organization:
   
   ![Projected Ship Dates Interface](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/Projected%20Ship%20Dates%20Interface.png)
 
-  9. At Micromeritics Instrument Corporation (MIC), we use this report to schedule production and provide estimated shipping dates to salespeople/customers.
-  10. The Projected Ship Dates data model can be seen below. SolaCorp Backlog is the fact table while Hot Orders, On Hold, Output Rates, and Product Groups are dynamic dimension tables:
+  10. At Micromeritics Instrument Corporation (MIC), we use this report to schedule production and provide estimated shipping dates to salespeople/customers.
+  11. The Projected Ship Dates data model can be seen below. SolaCorp Backlog is the fact table while Hot Orders, On Hold, Output Rates, and Product Groups are dynamic dimension tables:
   
   ![Projected Ship Dates Data Model](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/d378cfa0d4c3b6f2d2c92dbbe21935b10b1bf56b/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/Projected%20Ship%20Dates%20Data%20Model.png)
   
-  11. Our dimension tables are maintained by our operations liason using the [SolaCorp Hot Orders + Output Rates + On Hold.xlsx](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/a4df116b6ae961cccb0e23dae92cdcf23fd586f1/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/SolaCorp%20Hot%20Orders%20%2B%20Output%20Rates%20%2B%20On%20Hold.xlsx) file.
-  12. The "Hot Orders" worksheet allows him to re-rank orders within product groups that need to be pushed up in the production schedule by pasting valid order number/item number combinations in columns A and B:
+  12. Our dimension tables are maintained by our operations liason using the [SolaCorp Hot Orders + Output Rates + On Hold.xlsx](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/a4df116b6ae961cccb0e23dae92cdcf23fd586f1/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/SolaCorp%20Hot%20Orders%20%2B%20Output%20Rates%20%2B%20On%20Hold.xlsx) file.
+  13. The "Hot Orders" worksheet allows him to re-rank orders within product groups that need to be pushed up in the production schedule by pasting valid order number/item number combinations in columns A and B:
   
   ![Hot Orders](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/Hot%20Orders.png)
 
-  13. "Output Rates" allows us to set weekly output rates for each product group.
-  14. "On Hold" leaves the order in the queue, but highlights the entry in yellow on the report usign conditional formatting so that customer service/accounting knows to work with the customer on payments:
+  14. "Output Rates" allows us to set weekly output rates for each product group.
+  15. "On Hold" leaves the order in the queue, but highlights the entry in yellow on the report usign conditional formatting so that customer service/accounting knows to work with the customer on payments:
   
   ![On Hold](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/On%20Hold.png)
 
-  15. The semantic model is mostly created in Power Query by transforming the backlog, joining (merging) dimension tables, and invoking custom ranking/grouping functions. The M code can be found at this [GitHub location](https://raw.githubusercontent.com/gsolamon/Solamon-Portfolio-Projects/main/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Power%20Query%20M%20Code.txt).
-  16. To summarize the model, I take the following steps:
+  16. The semantic model is mostly created in Power Query by transforming the backlog, joining (merging) dimension tables, and invoking custom ranking/grouping functions. The M code can be found at this [GitHub location](https://raw.githubusercontent.com/gsolamon/Solamon-Portfolio-Projects/main/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Power%20Query%20M%20Code.txt).
+  17. To summarize the model, I take the following steps:
   - Load backlog as CSV using CSV/web contents data connectors.
   - Join "Product Groups" table on item description to get product groups for each order line.
   - Create Order_Item secondary key, enumerate 1 to order quantity, and expand this list onto new rows, giving each item its own line (quantity 1 per line).
@@ -62,13 +63,13 @@ In these three advanced projects, I will demonstrate my ability to build semanti
 
   - Joined "On Hold" table on order number to get orders on hold.
       
-  17. I also added the following calculated columns/measures using DAX:
+  18. I also added the following calculated columns/measures using DAX:
   - Color On Hold, which is "yellow" for orders on hold and BLANK() for orders not on hold. Used for conditional formatting.
   - Mean Lead Time gives how long customers are waiting on average for a given product group.
   - Last Lead Time gives salespeople an estimated lead time if a new order is booked today.
   - Weekly Order Frequency gives average frequency of orders per week for a given product group.
 
-  18. I also implemented security roles by geographic region so that salespeople can only see orders in their own territory:
+  19. I also implemented security roles by geographic region so that salespeople can only see orders in their own territory:
   
   ![Security Roles](https://github.com/gsolamon/Solamon-Portfolio-Projects/blob/c60a1db079fbcc40ee37e6ab17e0d9649a8d3032/Advanced%20Project%20%235%3A%20Projected%20Ship%20Dates%20in%20Power%20BI/Images/Security%20Roles.png)
 
